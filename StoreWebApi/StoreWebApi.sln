@@ -3,15 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{DFCAA884-91C3-41C3-928D-A1D3ABA15F6D}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{49B9493D-B441-405F-B4A8-778B1814AADE}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{7E4C14E8-56C8-4388-A7EA-0052943336A2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Domain", "Store.Domain\Store.Domain.csproj", "{33F0FA7B-08B1-42E1-98B7-8B962DECF7E7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.DataAccess.Postgress", "Store.DataAccess.Postgress\Store.DataAccess.Postgress.csproj", "{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Store.DataAccess.Postgress", "Store.DataAccess.Postgress\Store.DataAccess.Postgress.csproj", "{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{33F0FA7B-08B1-42E1-98B7-8B962DECF7E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33F0FA7B-08B1-42E1-98B7-8B962DECF7E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33F0FA7B-08B1-42E1-98B7-8B962DECF7E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33F0FA7B-08B1-42E1-98B7-8B962DECF7E7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -30,10 +18,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{33F0FA7B-08B1-42E1-98B7-8B962DECF7E7} = {DFCAA884-91C3-41C3-928D-A1D3ABA15F6D}
-		{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3} = {DFCAA884-91C3-41C3-928D-A1D3ABA15F6D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1D245593-BED6-4B58-AF75-5E94E71EA1B8}
