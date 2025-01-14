@@ -704,7 +704,8 @@
       "System.Threading.Channels/7.0.0": {},
       "Store.DataAccess.Postgress/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "9.0.0"
+          "Microsoft.EntityFrameworkCore": "9.0.0",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.2"
         },
         "runtime": {
           "Store.DataAccess.Postgress.dll": {
