@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Store.DataAccess.Postgress;
+using Store.DataAccess.Postgress.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,13 +12,14 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var configuration = builder.Configuration;
-Console.WriteLine(configuration.GetConnectionString(nameof(StoreDbContext)));
 builder.Services.AddDbContext<StoreDbContext>(
         options =>
         {
             options.UseNpgsql(configuration.GetConnectionString(nameof(StoreDbContext)));
         }
     );
+
+builder.Services.AddScoped<ClientsRepository>();
 
 var app = builder.Build();
 
