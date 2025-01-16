@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Store.DataAccess.Postgress;
 using Store.DataAccess.Postgress.Repositories;
+using Store.DataAccess.Postgress.Repositories.impl;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +20,7 @@ builder.Services.AddDbContext<StoreDbContext>(
         }
     );
 
-builder.Services.AddScoped<ClientsRepository>();
+builder.Services.AddScoped<IClientRepository, ClientRepositoryImpl>();
 
 var app = builder.Build();
 

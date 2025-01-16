@@ -3370,19 +3370,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\topha\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Store.API.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Store.API.csproj",
       "projectName": "Store.API",
-      "projectPath": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Store.API.csproj",
-      "packagesPath": "C:\\Users\\topha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Store.API.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\topha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3397,8 +3397,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj": {
-              "projectPath": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj"
+            "C:\\Users\\Admin\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj"
             }
           }
         }
@@ -3458,7 +3458,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

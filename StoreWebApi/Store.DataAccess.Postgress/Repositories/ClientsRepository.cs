@@ -16,11 +16,11 @@ namespace Store.DataAccess.Postgress.Repositories
                 .AsNoTracking()
                 .ToListAsync();
         }
-        public async Task<List<ClientEntity>> Get(int offset, int limit)
+        public async Task<List<ClientEntity>> Get(int page, int limit)
         {
             return await _dbContext.Client
                 .AsNoTracking()
-                .Skip((offset - 1) * limit)
+                .Skip((page - 1) * limit)
                 .Take(limit)
                 .ToListAsync();
         }

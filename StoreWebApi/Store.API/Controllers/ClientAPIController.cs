@@ -8,15 +8,15 @@ namespace Store.API.Controllers
     [Route("api/v1/client")]
     public class ClientAPIController : ControllerBase
     {
-        private readonly ClientsRepository _db;
-        public ClientAPIController(ClientsRepository db)
+        private readonly IClientRepository _db;
+        public ClientAPIController(IClientRepository db)
         {
             _db = db;
         }
         [HttpGet("get")]
         public async Task<ActionResult<IEnumerable<ClientEntity>>> Get()
         {
-            return Ok(await _db.Get());
+            return Ok(await _db.FindAll());
         }
     }
 }
