@@ -22,6 +22,8 @@ builder.Services.AddDbContext<StoreDbContext>(
 
 builder.Services.AddScoped<IClientRepository, ClientRepositoryImpl>();
 
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
 var app = builder.Build();
 
 

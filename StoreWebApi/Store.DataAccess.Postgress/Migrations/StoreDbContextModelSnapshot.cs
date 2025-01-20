@@ -32,7 +32,7 @@ namespace Store.DataAccess.Postgress.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Counrty")
+                    b.Property<string>("Country")
                         .IsRequired()
                         .HasColumnType("text");
 

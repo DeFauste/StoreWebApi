@@ -12,8 +12,8 @@ using Store.DataAccess.Postgress;
 namespace Store.DataAccess.Postgress.Migrations
 {
     [DbContext(typeof(StoreDbContext))]
-    [Migration("20250114171922_initdb")]
-    partial class initdb
+    [Migration("20250120185415_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,7 +35,7 @@ namespace Store.DataAccess.Postgress.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Counrty")
+                    b.Property<string>("Country")
                         .IsRequired()
                         .HasColumnType("text");
 

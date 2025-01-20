@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "Store.API.Controllers.ClientAPIController",
+    "Method": "Create",
+    "RelativePath": "api/v1/client",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "clientDto",
+        "Type": "Store.API.Dto.ClientDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Store.API.Controllers.ClientAPIController",
     "Method": "Get",
     "RelativePath": "api/v1/client/get",
     "HttpMethod": "GET",
