@@ -57,12 +57,6 @@ namespace Store.DataAccess.Postgress.Repositories.impl
 
         public async Task Update(ClientEntity entity, AddressEntity data)
         {
-            var client = await _dbContext.Client
-                .FirstOrDefaultAsync(c => c.Id == entity.Id)
-                ?? throw new Exception();
-            client.AddressId = data.Id;
-            client.Address = data;
-
             await _dbContext.Client
                 .Where(c => c.Id == entity.Id)
                 .ExecuteUpdateAsync(s => s

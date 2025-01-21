@@ -21,7 +21,7 @@ namespace Store.API.Controllers
         public async Task<ActionResult<IEnumerable<ClientEntity>>> Get()
         {
             var listEntity = await _db.FindAll();
-            var listDto = _mapepr.Map<List<ClientDto>>(listEntity);
+            var listDto = _mapepr.Map<List<ClientEntity>, List<ClientDto>>(listEntity);
             return Ok(listDto);
         }
         [HttpPost]

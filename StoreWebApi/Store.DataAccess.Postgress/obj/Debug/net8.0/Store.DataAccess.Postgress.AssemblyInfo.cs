@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Store.DataAccess.Postgress")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f05611b62ce9d338cb85d6300774bfebd3348b0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5c6d2b0c413cfcd7b86b9e414ff6a484fb2c4976")]
 [assembly: System.Reflection.AssemblyProductAttribute("Store.DataAccess.Postgress")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Store.DataAccess.Postgress")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
