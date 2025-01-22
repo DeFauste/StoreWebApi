@@ -2,7 +2,7 @@
 
 namespace Store.API.Dto
 {
-    public class ClientDto
+    public class ClientDTO
     {
         public Guid Id { get; set; }
         [Required, MaxLength(30)]

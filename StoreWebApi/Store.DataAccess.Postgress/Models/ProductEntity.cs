@@ -13,7 +13,7 @@ namespace Store.DataAccess.Postgress.Models
         public string Category { get; set; } = string.Empty ;
         public double Price { get; set; } = 0;
         public long AvailableStock { get; set; } = 0; // число закупленных экземпляров товара
-        public DateTime LastUpdateDate { get; set; } = DateTime.Now; // число последней закупки
+        public DateTime LastUpdateDate { get; set; } = DateTime.UtcNow; // число последней закупки
         public Guid SupplierId { get; set; }
         public SupplierEntiry? Supplier { get; set; }
         public ImagesEntity? Image { get; set; }

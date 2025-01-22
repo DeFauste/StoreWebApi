@@ -7,10 +7,10 @@ namespace Store.API.Services
     {
         private readonly IClientRepository _db;
         private readonly IMapper _mapepr;
-        //public ClientService(IClientRepository db, IClie IMapper mapper)
-        //{
-        //    _db = db;
-        //    _mapepr = mapper;
-        //}
-}
+        public ClientService(IClientRepository db, IMapper mapper)
+        {
+            _db = db;
+            _mapepr = mapper;
+        }
+    }
 }

@@ -7,8 +7,8 @@ namespace Store.API.Dto.Mapper
     {
         public AutoMapperProfile()
         {
-            CreateMap<ClientDto, ClientEntity>();
-            CreateMap<ClientEntity, ClientDto>();
+            CreateMap<ClientDTO, ClientEntity>();
+            CreateMap<ClientEntity, ClientDTO>();
         }
     }
 }

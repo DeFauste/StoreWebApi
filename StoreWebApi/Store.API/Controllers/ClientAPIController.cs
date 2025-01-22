@@ -21,11 +21,11 @@ namespace Store.API.Controllers
         public async Task<ActionResult<IEnumerable<ClientEntity>>> Get()
         {
             var listEntity = await _db.FindAll();
-            var listDto = _mapepr.Map<List<ClientEntity>, List<ClientDto>>(listEntity);
+            var listDto = _mapepr.Map<List<ClientEntity>, List<ClientDTO>>(listEntity);
             return Ok(listDto);
         }
         [HttpPost]
-        public async Task<ActionResult> Create([FromBody]ClientDto clientDto)
+        public async Task<ActionResult> Create([FromBody]ClientDTO clientDto)
         {
             var clientEntity = _mapepr.Map<ClientEntity>(clientDto);
             clientEntity.RegistrationDate = DateTime.UtcNow;
