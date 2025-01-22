@@ -10,38 +10,38 @@ namespace Store.DataAccess.Postgress.Repositories.impl
         {
             _dbContext = dbContext;
         }
-        public async Task Add(SupplierEntiry entity)
+        public void Add(SupplierEntiry entity)
         {
-            await _dbContext.Supplier.AddAsync(entity);
-            await _dbContext.SaveChangesAsync();
+           _dbContext.Supplier.Add(entity);
+           _dbContext.SaveChanges();
         }
 
-        public async Task DeleteById(Guid id)
+        public void DeleteById(Guid id)
         {
-            await _dbContext.Supplier
+            _dbContext.Supplier
                 .Where(s => s.Id == id)
-                .ExecuteDeleteAsync();
+                .ExecuteDelete();
         }
 
-        public async Task<List<SupplierEntiry>> FindAll()
+        public List<SupplierEntiry> FindAll()
         {
-            return await _dbContext.Supplier
+            return _dbContext.Supplier
                 .AsNoTracking()
-                .ToListAsync();
+                .ToList();
         }
 
-        public async Task<SupplierEntiry?> FindById(Guid id)
+        public SupplierEntiry? FindById(Guid id)
         {
-            return await _dbContext.Supplier
+            return _dbContext.Supplier
                 .AsNoTracking()
-                .FirstOrDefaultAsync(s => s.Id == id);
+                .FirstOrDefault(s => s.Id == id);
         }
 
-        public async Task Update(SupplierEntiry entity, AddressEntity data)
+        public void Update(SupplierEntiry entity, AddressEntity data)
         {
-           await _dbContext.Supplier
+           _dbContext.Supplier
                 .Where(s => s.Id == entity.Id)
-                .ExecuteUpdateAsync(a => a
+                .ExecuteUpdate(a => a
                 .SetProperty(s =>  s.Address, data));
         }
     }

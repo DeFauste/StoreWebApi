@@ -18,9 +18,9 @@ namespace Store.API.Controllers
             _mapepr = mapper;
         }
         [HttpGet("get")]
-        public async Task<ActionResult<IEnumerable<ClientEntity>>> Get()
+        public async Task<ActionResult<IEnumerable<ClientDTO>>> Get()
         {
-            var listEntity = await _db.FindAll();
+            var listEntity = _db.FindAll();
             var listDto = _mapepr.Map<List<ClientEntity>, List<ClientDTO>>(listEntity);
             return Ok(listDto);
         }
@@ -29,7 +29,7 @@ namespace Store.API.Controllers
         {
             var clientEntity = _mapepr.Map<ClientEntity>(clientDto);
             clientEntity.RegistrationDate = DateTime.UtcNow;
-            await _db.Add(clientEntity);
+            _db.Add(clientEntity);
             return Ok();
         }
     }

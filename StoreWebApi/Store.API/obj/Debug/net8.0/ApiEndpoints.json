@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "clientDto",
-        "Type": "Store.API.Dto.ClientDto",
+        "Type": "Store.API.Dto.ClientDTO",
         "IsRequired": true
       }
     ],
@@ -25,7 +25,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Store.DataAccess.Postgress.Models.ClientEntity, Store.DataAccess.Postgress, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Store.API.Dto.ClientDTO, Store.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

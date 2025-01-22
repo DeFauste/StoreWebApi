@@ -10,55 +10,55 @@ namespace Store.DataAccess.Postgress.Repositories.impl
         {
             _dbContext = dbContext;
         }
-        public async Task Add(ProductEntity entity)
+        public void Add(ProductEntity entity)
         {
-            await _dbContext.Product.AddAsync(entity);
-            await _dbContext.SaveChangesAsync();
+            _dbContext.Product.Add(entity);
+            _dbContext.SaveChanges();
         }
 
-        public async Task DeleteById(Guid id)
+        public void DeleteById(Guid id)
         {
-            await _dbContext.Product
+            _dbContext.Product
                 .Where(p => p.Id == id)
-                .ExecuteDeleteAsync();
+                .ExecuteDelete();
         }
 
-        public async Task<List<ProductEntity>> FindAll()
+        public List<ProductEntity> FindAll()
         {
-            return await _dbContext.Product
+            return _dbContext.Product
                 .AsNoTracking()
-                .ToListAsync();
+                .ToList();
         }
 
-        public async Task<ProductEntity?> FindById(Guid id)
+        public ProductEntity? FindById(Guid id)
         {
-            return await _dbContext.Product
+            return  _dbContext.Product
                 .AsNoTracking()
-                .FirstOrDefaultAsync(p => p.Id == id);
+                .FirstOrDefault(p => p.Id == id);
         }
 
-        public async Task<ProductEntity?> FindBySupplierAsync(SupplierEntiry supplier)
+        public ProductEntity? FindBySupplier(SupplierEntiry supplier)
         {
-            return await _dbContext.Product
+            return _dbContext.Product
                 .AsNoTracking()
-                .FirstOrDefaultAsync(p => p.Supplier == supplier);
+                .FirstOrDefault(p => p.Supplier == supplier);
                 
         }
 
-        public async Task<ProductEntity?> FindBySupplierAsync(ImagesEntity image)
+        public ProductEntity? FindBySupplier(ImagesEntity image)
         {
-            return await _dbContext.Product
+            return _dbContext.Product
                 .AsNoTracking()
-                .FirstOrDefaultAsync(p => p.Image == image);
+                .FirstOrDefault(p => p.Image == image);
         }
 
-        public async Task Update(ProductEntity entity, long decrease)
+        public void Update(ProductEntity entity, long decrease)
         {
-            var product = await _dbContext.Product
-                .FirstOrDefaultAsync(p => p.Id == entity.Id)
+            var product = _dbContext.Product
+                .FirstOrDefault(p => p.Id == entity.Id)
                 ?? throw new Exception();
             product.AvailableStock -= decrease;
-            await _dbContext.SaveChangesAsync();    
+            _dbContext.SaveChanges();    
         }
     }
 }

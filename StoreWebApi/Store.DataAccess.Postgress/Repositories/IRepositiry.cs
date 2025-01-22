@@ -3,11 +3,11 @@ namespace Store.DataAccess.Postgress.Repositories
 {
     public interface IRepositiry<T, D, ID>
     {
-        Task Add(T entity);
-        Task DeleteById(ID id);
-        Task<T?> FindById(ID id);
-        Task<List<T>> FindAll();
-        Task Update(T entity, D data);
+        void Add(T entity);
+        void DeleteById(ID id);
+        T? FindById(ID id);
+        List<T> FindAll();
+        void Update(T entity, D data);
 
     }
 }

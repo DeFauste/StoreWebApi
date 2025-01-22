@@ -10,39 +10,39 @@ namespace Store.DataAccess.Postgress.Repositories.impl
         {
             _dbContext = dbContext;
         }
-        public async Task Add(ImagesEntity entity)
+        public void Add(ImagesEntity entity)
         {
-            await _dbContext.Images.AddAsync(entity);
-            await _dbContext.SaveChangesAsync();
+             _dbContext.Images.Add(entity);
+             _dbContext.SaveChanges();
         }
 
-        public async Task DeleteById(Guid id)
+        public void DeleteById(Guid id)
         {
-            await _dbContext.Images
+            _dbContext.Images
                 .Where(i => i.Id == id)
-                .ExecuteDeleteAsync();
+                .ExecuteDelete();
         }
 
-        public async Task<List<ImagesEntity>> FindAll()
+        public List<ImagesEntity> FindAll()
         {
-            return await _dbContext.Images
+            return _dbContext.Images
                 .AsNoTracking()
-                .ToListAsync(); 
+                .ToList(); 
         }
 
-        public async Task<ImagesEntity?> FindById(Guid id)
+        public ImagesEntity? FindById(Guid id)
         {
-            return await _dbContext.Images
+            return _dbContext.Images
                 .AsNoTracking()
                 .Where(i => i.Id == id)
-                .FirstOrDefaultAsync();
+                .FirstOrDefault();
         }
 
-        public async Task Update(ImagesEntity entity, byte[] data)
+        public void Update(ImagesEntity entity, byte[] data)
         {
-            await _dbContext.Images
+            _dbContext.Images
                 .Where(i => i.Id == entity.Id)
-                .ExecuteUpdateAsync(d => d
+                .ExecuteUpdate(d => d
                 .SetProperty(i => i.Image, data));
         }
     }

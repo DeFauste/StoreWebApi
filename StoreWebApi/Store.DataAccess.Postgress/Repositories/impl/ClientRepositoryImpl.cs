@@ -11,53 +11,53 @@ namespace Store.DataAccess.Postgress.Repositories.impl
             _dbContext = dbContext;
         }
 
-        public async Task DeleteById(Guid id)
+        public void DeleteById(Guid id)
         {
-            await _dbContext.Client
+            _dbContext.Client
                     .Where(c => c.Id == id)
-                    .ExecuteDeleteAsync();
+                    .ExecuteDelete();
         }
 
-        public async Task<List<ClientEntity>> FindAll()
+        public  List<ClientEntity> FindAll()
         {
-            return await _dbContext.Client
+            return  _dbContext.Client
                         .AsNoTracking()
-                        .ToListAsync();
+                        .ToList();
         }
 
-        public async Task<List<ClientEntity>> FindAll(int limit, int page)
+        public List<ClientEntity> FindAll(int limit, int page)
         {
-            return await _dbContext.Client
+            return _dbContext.Client
                         .AsNoTracking()
                         .Skip((page - 1) * limit)
                         .Take(limit)
-                        .ToListAsync();
+                        .ToList();
         }
 
-        public async Task<ClientEntity?> FindById(Guid id)
+        public ClientEntity? FindById(Guid id)
         {
-            return await _dbContext.Client
+            return _dbContext.Client
                 .AsNoTracking()
-                .FirstOrDefaultAsync(c => c.Id == id);
+                .FirstOrDefault(c => c.Id == id);
         }
 
-        public async Task<List<ClientEntity>> FindClient(string name, string surname)
+        public List<ClientEntity> FindClient(string name, string surname)
         {
-            return await _dbContext.Client
+            return _dbContext.Client
                 .AsNoTracking()
                 .Where(c => c.ClientName == name && c.ClientSurname == surname)
-                .ToListAsync();
+                .ToList();
         }
 
-        public async Task Add(ClientEntity entity)
+        public void Add(ClientEntity entity)
         {
-            await _dbContext.Client.AddAsync(entity);
-            await _dbContext.SaveChangesAsync();
+            _dbContext.Client.Add(entity);
+            _dbContext.SaveChanges();
         }
 
-        public async Task Update(ClientEntity entity, AddressEntity data)
+        public void Update(ClientEntity entity, AddressEntity data)
         {
-            await _dbContext.Client
+            _dbContext.Client
                 .Where(c => c.Id == entity.Id)
                 .ExecuteUpdateAsync(s => s
                 .SetProperty(c => c.AddressId, data.Id)

@@ -4,7 +4,7 @@ namespace Store.DataAccess.Postgress.Repositories
 {
     public interface IProductRepository: IRepositiry<ProductEntity, long,Guid>
     {
-        Task<ProductEntity?> FindBySupplierAsync(SupplierEntiry supplier);
-        Task<ProductEntity?> FindBySupplierAsync(ImagesEntity image);
+        ProductEntity? FindBySupplier(SupplierEntiry supplier);
+        ProductEntity? FindBySupplier(ImagesEntity image);
     }
 }
