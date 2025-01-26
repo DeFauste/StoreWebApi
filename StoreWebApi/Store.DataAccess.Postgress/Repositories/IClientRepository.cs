@@ -6,5 +6,6 @@ namespace Store.DataAccess.Postgress.Repositories
     {
         List<ClientEntity> FindAll(int limit, int page);
         List<ClientEntity> FindClient(string name, string surname);
+        bool CanConnection();
     }
 }

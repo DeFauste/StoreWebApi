@@ -1,8 +1,7 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Store.API.Dto;
+using Store.API.Services;
 using Store.DataAccess.Postgress.Models;
-using Store.DataAccess.Postgress.Repositories;
 
 namespace Store.API.Controllers
 {
@@ -10,26 +9,102 @@ namespace Store.API.Controllers
     [Route("api/v1/client")]
     public class ClientAPIController : ControllerBase
     {
-        private readonly IClientRepository _db;
-        private readonly IMapper _mapepr;
-        public ClientAPIController(IClientRepository db, IMapper mapper)
+        private ClientService _clientService;
+        public ClientAPIController(ClientService clientService)
         {
-            _db = db;
-            _mapepr = mapper;
+            _clientService = clientService;
         }
-        [HttpGet("get")]
-        public async Task<ActionResult<IEnumerable<ClientDTO>>> Get()
+
+        [HttpGet("getAll")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public ActionResult<IEnumerable<ClientDTO>> GetAll()
         {
-            var listEntity = _db.FindAll();
-            var listDto = _mapepr.Map<List<ClientEntity>, List<ClientDTO>>(listEntity);
+            if (_clientService.CanConnection() == false) return StatusCode(500, "No connection to the database");
+            var listDto = _clientService.FindAll();
             return Ok(listDto);
         }
-        [HttpPost]
-        public async Task<ActionResult> Create([FromBody]ClientDTO clientDto)
+
+        [HttpGet("limit={limit:int}&page={page:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public ActionResult<IEnumerable<ClientDTO>> GetAll(int limit, int page)
         {
-            var clientEntity = _mapepr.Map<ClientEntity>(clientDto);
-            clientEntity.RegistrationDate = DateTime.UtcNow;
-            _db.Add(clientEntity);
+            if (_clientService.CanConnection() == false) 
+                return StatusCode(StatusCodes.Status500InternalServerError, "No connection to the database");
+            var listDto = _clientService.FindAll(limit, page);
+            return Ok(listDto);
+        }
+
+        [HttpGet("id=")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public ActionResult<ClientDTO> GetById(Guid id)
+        {
+            if (_clientService.CanConnection() == false) 
+                return StatusCode(StatusCodes.Status500InternalServerError, "No connection to the database");
+            var dto = _clientService.FindById(id);
+            if (dto == null)
+            {
+                return NotFound();
+            }
+            return Ok(dto);
+        }
+
+        [HttpGet("name={name}&page={surname}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public ActionResult<IEnumerable<ClientDTO>> GetByNameAndSurname(string name, string surname)
+        {
+            if (_clientService.CanConnection() == false)
+                return StatusCode(StatusCodes.Status500InternalServerError, "No connection to the database");
+
+            var listDto = _clientService.FindByNameAndSurname(name, surname);
+            return Ok(listDto);
+        }
+
+        [HttpPost("newClient=")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public ActionResult Create([FromBody]ClientDTO clientDto)
+        {
+            if (_clientService.CanConnection() == false)
+                return StatusCode(StatusCodes.Status500InternalServerError, "No connection to the database");
+            if (clientDto == null) return BadRequest();
+            clientDto.Id = Guid.Empty;
+            _clientService.Create(clientDto);
+            return Ok();
+        }
+
+        [HttpPatch("updateAddress:id={id}&{address}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public ActionResult UpdateA(Guid id, [FromBody]AddressEntity addressEntity)
+        {
+            if (_clientService.CanConnection() == false)
+                return StatusCode(StatusCodes.Status500InternalServerError, "No connection to the database");
+            if (id == Guid.Empty || addressEntity == null) return BadRequest();
+            _clientService.UpdateAddress(id, addressEntity);
+            return Ok();
+        }
+
+        [HttpDelete("delete=")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public ActionResult Delete(Guid guid)
+        {
+            if (_clientService.CanConnection() == false)
+                return StatusCode(StatusCodes.Status500InternalServerError, "No connection to the database");
+            if (guid == Guid.Empty) 
+                return BadRequest();
+            _clientService.Delete(guid);
             return Ok();
         }
     }

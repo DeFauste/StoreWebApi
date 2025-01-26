@@ -63,5 +63,10 @@ namespace Store.DataAccess.Postgress.Repositories.impl
                 .SetProperty(c => c.AddressId, data.Id)
                 );
         }
+
+        public bool CanConnection()
+        {
+            return _dbContext.Database.CanConnect();
+        }
     }
 }

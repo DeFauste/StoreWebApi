@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Store.API.Dto
 {
     public class ClientDTO
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         [Required, MaxLength(30)]
         public string ClientName { get; set; } = string.Empty;
@@ -12,6 +14,7 @@ namespace Store.API.Dto
         [Required]
         public DateTime Birthday { get; set; }
         public bool Gender { get; set; } = true;
+        [Required]
         public Guid AddressId { get; set; }
     }
 }
