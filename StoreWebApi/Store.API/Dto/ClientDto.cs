@@ -5,7 +5,6 @@ namespace Store.API.Dto
 {
     public class ClientDTO
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         [Required, MaxLength(30)]
         public string ClientName { get; set; } = string.Empty;
