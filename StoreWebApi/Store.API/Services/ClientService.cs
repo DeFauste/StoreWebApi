@@ -69,7 +69,7 @@ namespace Store.API.Services
         }
         public void UpdateAddress(Guid id, AddressEntity address)
         {
-            var clientEntity = new ClientEntity { Id = id };
+            var clientEntity = new ClientEntity { Id = id }; 
             _db.Update(clientEntity, address);
         }
         public void Delete(Guid id)
