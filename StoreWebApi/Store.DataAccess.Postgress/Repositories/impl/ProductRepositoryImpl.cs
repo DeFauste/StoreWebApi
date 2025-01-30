@@ -10,10 +10,11 @@ namespace Store.DataAccess.Postgress.Repositories.impl
         {
             _dbContext = dbContext;
         }
-        public void Add(ProductEntity entity)
+        public ProductEntity Add(ProductEntity entity)
         {
-            _dbContext.Product.Add(entity);
+            var creted = _dbContext.Product.Add(entity);
             _dbContext.SaveChanges();
+            return creted.Entity;
         }
 
         public void DeleteById(Guid id)
@@ -59,6 +60,10 @@ namespace Store.DataAccess.Postgress.Repositories.impl
                 ?? throw new Exception();
             product.AvailableStock -= decrease;
             _dbContext.SaveChanges();    
+        }
+        public bool CanConnection()
+        {
+            return _dbContext.Database.CanConnect();
         }
     }
 }

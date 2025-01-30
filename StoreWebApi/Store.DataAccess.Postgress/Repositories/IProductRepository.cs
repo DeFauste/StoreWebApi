@@ -1,4 +1,5 @@
-﻿using Store.DataAccess.Postgress.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Store.DataAccess.Postgress.Models;
 
 namespace Store.DataAccess.Postgress.Repositories
 {
@@ -6,5 +7,6 @@ namespace Store.DataAccess.Postgress.Repositories
     {
         ProductEntity? FindBySupplier(SupplierEntiry supplier);
         ProductEntity? FindBySupplier(ImagesEntity image);
+        bool CanConnection();
     }
 }

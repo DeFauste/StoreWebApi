@@ -9,5 +9,6 @@ namespace Store.DataAccess.Postgress.Repositories
 {
     public interface IImageRepository: IRepositiry<ImagesEntity, byte[], Guid>
     {
+        bool CanConnection();
     }
 }

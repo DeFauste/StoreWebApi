@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Store.DataAccess.Postgress.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -23,6 +23,18 @@ namespace Store.DataAccess.Postgress.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Address", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Images",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Image = table.Column<byte[]>(type: "bytea", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Images", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -76,13 +88,19 @@ namespace Store.DataAccess.Postgress.Migrations
                     Name = table.Column<string>(type: "text", nullable: false),
                     Category = table.Column<string>(type: "text", nullable: false),
                     Price = table.Column<double>(type: "double precision", nullable: false),
-                    AvailableStock = table.Column<int>(type: "integer", nullable: false),
+                    AvailableStock = table.Column<long>(type: "bigint", nullable: false),
                     LastUpdateDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    SupplierId = table.Column<Guid>(type: "uuid", nullable: false)
+                    SupplierId = table.Column<Guid>(type: "uuid", nullable: false),
+                    ImageId = table.Column<Guid>(type: "uuid", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Product", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Product_Images_ImageId",
+                        column: x => x.ImageId,
+                        principalTable: "Images",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Product_Supplier_SupplierId",
                         column: x => x.SupplierId,
@@ -91,33 +109,15 @@ namespace Store.DataAccess.Postgress.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Images",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Image = table.Column<byte[]>(type: "bytea", nullable: false),
-                    ProductEntityId = table.Column<Guid>(type: "uuid", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Images", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Images_Product_ProductEntityId",
-                        column: x => x.ProductEntityId,
-                        principalTable: "Product",
-                        principalColumn: "Id");
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_Client_AddressId",
                 table: "Client",
                 column: "AddressId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Images_ProductEntityId",
-                table: "Images",
-                column: "ProductEntityId");
+                name: "IX_Product_ImageId",
+                table: "Product",
+                column: "ImageId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Product_SupplierId",
@@ -137,10 +137,10 @@ namespace Store.DataAccess.Postgress.Migrations
                 name: "Client");
 
             migrationBuilder.DropTable(
-                name: "Images");
+                name: "Product");
 
             migrationBuilder.DropTable(
-                name: "Product");
+                name: "Images");
 
             migrationBuilder.DropTable(
                 name: "Supplier");

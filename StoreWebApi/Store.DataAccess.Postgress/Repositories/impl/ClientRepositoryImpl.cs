@@ -49,10 +49,12 @@ namespace Store.DataAccess.Postgress.Repositories.impl
                 .ToList();
         }
 
-        public void Add(ClientEntity entity)
+        public ClientEntity Add(ClientEntity entity)
         {
-            _dbContext.Client.Add(entity);
+            var created = _dbContext.Client.Add(entity);
             _dbContext.SaveChanges();
+ 
+            return created.Entity;
         }
 
         public void Update(ClientEntity entity, AddressEntity data)

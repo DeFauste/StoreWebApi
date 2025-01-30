@@ -9,6 +9,10 @@ namespace Store.API.Dto.Mapper
         {
             CreateMap<ClientDTO, ClientEntity>();
             CreateMap<ClientEntity, ClientDTO>();
+            CreateMap<ProductEntity, ProductDTO>();
+            CreateMap<ProductDTO, ProductEntity>();
+            CreateMap<SupplierDTO, SupplierEntiry>();
+            CreateMap<SupplierEntiry, SupplierDTO>();
         }
     }
 }

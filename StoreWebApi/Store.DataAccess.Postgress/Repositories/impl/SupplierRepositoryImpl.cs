@@ -10,10 +10,11 @@ namespace Store.DataAccess.Postgress.Repositories.impl
         {
             _dbContext = dbContext;
         }
-        public void Add(SupplierEntiry entity)
+        public SupplierEntiry Add(SupplierEntiry entity)
         {
-           _dbContext.Supplier.Add(entity);
+            var creted = _dbContext.Supplier.Add(entity);
            _dbContext.SaveChanges();
+            return creted.Entity;
         }
 
         public void DeleteById(Guid id)
@@ -43,6 +44,10 @@ namespace Store.DataAccess.Postgress.Repositories.impl
                 .Where(s => s.Id == entity.Id)
                 .ExecuteUpdate(a => a
                 .SetProperty(s =>  s.Address, data));
+        }
+        public bool CanConnection()
+        {
+            return _dbContext.Database.CanConnect();
         }
     }
 }

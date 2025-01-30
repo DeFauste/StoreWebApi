@@ -10,10 +10,16 @@ namespace Store.DataAccess.Postgress.Repositories.impl
         {
             _dbContext = dbContext;
         }
-        public void Add(ImagesEntity entity)
+        public ImagesEntity Add(ImagesEntity entity)
         {
-             _dbContext.Images.Add(entity);
+             var creted = _dbContext.Images.Add(entity);
              _dbContext.SaveChanges();
+            return creted.Entity;
+        }
+
+        public bool CanConnection()
+        {
+            return _dbContext.Database.CanConnect();
         }
 
         public void DeleteById(Guid id)

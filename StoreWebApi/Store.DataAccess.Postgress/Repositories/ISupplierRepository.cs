@@ -9,6 +9,7 @@ namespace Store.DataAccess.Postgress.Repositories
 {
     public interface ISupplierRepository: IRepositiry<SupplierEntiry, AddressEntity, Guid>
     {
+        bool CanConnection();
 
     }
 }

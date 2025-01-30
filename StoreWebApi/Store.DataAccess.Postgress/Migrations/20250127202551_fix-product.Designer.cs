@@ -12,8 +12,8 @@ using Store.DataAccess.Postgress;
 namespace Store.DataAccess.Postgress.Migrations
 {
     [DbContext(typeof(StoreDbContext))]
-    [Migration("20250120185415_initial")]
-    partial class initial
+    [Migration("20250127202551_fix-product")]
+    partial class fixproduct
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -91,12 +91,7 @@ namespace Store.DataAccess.Postgress.Migrations
                         .IsRequired()
                         .HasColumnType("bytea");
 
-                    b.Property<Guid?>("ProductEntityId")
-                        .HasColumnType("uuid");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ProductEntityId");
 
                     b.ToTable("Images");
                 });
@@ -107,12 +102,15 @@ namespace Store.DataAccess.Postgress.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<int>("AvailableStock")
-                        .HasColumnType("integer");
+                    b.Property<long>("AvailableStock")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Category")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<Guid>("ImageId")
+                        .HasColumnType("uuid");
 
                     b.Property<DateTime>("LastUpdateDate")
                         .HasColumnType("timestamp with time zone");
@@ -128,6 +126,8 @@ namespace Store.DataAccess.Postgress.Migrations
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ImageId");
 
                     b.HasIndex("SupplierId");
 
@@ -169,20 +169,21 @@ namespace Store.DataAccess.Postgress.Migrations
                     b.Navigation("Address");
                 });
 
-            modelBuilder.Entity("Store.DataAccess.Postgress.Models.ImagesEntity", b =>
-                {
-                    b.HasOne("Store.DataAccess.Postgress.Models.ProductEntity", null)
-                        .WithMany("Images")
-                        .HasForeignKey("ProductEntityId");
-                });
-
             modelBuilder.Entity("Store.DataAccess.Postgress.Models.ProductEntity", b =>
                 {
+                    b.HasOne("Store.DataAccess.Postgress.Models.ImagesEntity", "Image")
+                        .WithMany()
+                        .HasForeignKey("ImageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Store.DataAccess.Postgress.Models.SupplierEntiry", "Supplier")
                         .WithMany()
                         .HasForeignKey("SupplierId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Image");
 
                     b.Navigation("Supplier");
                 });
@@ -196,11 +197,6 @@ namespace Store.DataAccess.Postgress.Migrations
                         .IsRequired();
 
                     b.Navigation("Address");
-                });
-
-            modelBuilder.Entity("Store.DataAccess.Postgress.Models.ProductEntity", b =>
-                {
-                    b.Navigation("Images");
                 });
 #pragma warning restore 612, 618
         }
