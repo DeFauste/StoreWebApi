@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\controllers\\clientapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\controllers\\clientapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\services\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\services\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.dataaccess.postgress\\repositories\\irepositiry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|solutionrelative:store.dataaccess.postgress\\repositories\\irepositiry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\controllers\\clientapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\controllers\\clientapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.dataaccess.postgress\\repositories\\impl\\clientrepositoryimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|solutionrelative:store.dataaccess.postgress\\repositories\\impl\\clientrepositoryimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.dataaccess.postgress\\models\\cliententity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|solutionrelative:store.dataaccess.postgress\\models\\cliententity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.dataaccess.postgress\\repositories\\irepositiry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|solutionrelative:store.dataaccess.postgress\\repositories\\irepositiry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\dto\\clientdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,17 +62,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 602,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ClientAPIController.cs",
               "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Controllers\\ClientAPIController.cs",
               "RelativeDocumentMoniker": "Store.API\\Controllers\\ClientAPIController.cs",
               "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Controllers\\ClientAPIController.cs",
               "RelativeToolTip": "Store.API\\Controllers\\ClientAPIController.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAcwEcAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAAAcwEoAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-29T17:04:13.406Z",
               "IsPinned": true,
@@ -76,13 +80,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ClientService.cs",
               "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Services\\ClientService.cs",
               "RelativeDocumentMoniker": "Store.API\\Services\\ClientService.cs",
               "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Services\\ClientService.cs",
               "RelativeToolTip": "Store.API\\Services\\ClientService.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAUwHEAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAiwHUAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-30T16:47:00.758Z",
               "IsPinned": true,
@@ -90,7 +94,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
+              "Title": "ClientRepositoryImpl.cs",
+              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Repositories\\impl\\ClientRepositoryImpl.cs",
+              "RelativeDocumentMoniker": "Store.DataAccess.Postgress\\Repositories\\impl\\ClientRepositoryImpl.cs",
+              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Repositories\\impl\\ClientRepositoryImpl.cs",
+              "RelativeToolTip": "Store.DataAccess.Postgress\\Repositories\\impl\\ClientRepositoryImpl.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAmwEAAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T17:58:16.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "AdressDTO.cs",
               "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Dto\\AdressDTO.cs",
               "RelativeDocumentMoniker": "Store.API\\Dto\\AdressDTO.cs",
@@ -103,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ProductRepositoryImpl.cs",
               "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Repositories\\impl\\ProductRepositoryImpl.cs",
               "RelativeDocumentMoniker": "Store.DataAccess.Postgress\\Repositories\\impl\\ProductRepositoryImpl.cs",
@@ -116,7 +133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "IRepositiry.cs",
               "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Repositories\\IRepositiry.cs",
               "RelativeDocumentMoniker": "Store.DataAccess.Postgress\\Repositories\\IRepositiry.cs",
@@ -129,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "SupplierRepositoryImpl.cs",
               "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Repositories\\impl\\SupplierRepositoryImpl.cs",
               "RelativeDocumentMoniker": "Store.DataAccess.Postgress\\Repositories\\impl\\SupplierRepositoryImpl.cs",
@@ -142,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ClientDTO.cs",
               "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Dto\\ClientDTO.cs",
               "RelativeDocumentMoniker": "Store.API\\Dto\\ClientDTO.cs",
@@ -168,7 +185,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "ISupplierRepository.cs",
               "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Repositories\\ISupplierRepository.cs",
               "RelativeDocumentMoniker": "Store.DataAccess.Postgress\\Repositories\\ISupplierRepository.cs",
@@ -181,7 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ImageRepository.cs",
               "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Repositories\\impl\\ImageRepository.cs",
               "RelativeDocumentMoniker": "Store.DataAccess.Postgress\\Repositories\\impl\\ImageRepository.cs",
@@ -194,7 +211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ImageService.cs",
               "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Services\\ImageService.cs",
               "RelativeDocumentMoniker": "Store.API\\Services\\ImageService.cs",
@@ -206,7 +223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ImagesAPIController.cs",
               "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Controllers\\ImagesAPIController.cs",
               "RelativeDocumentMoniker": "Store.API\\Controllers\\ImagesAPIController.cs",
