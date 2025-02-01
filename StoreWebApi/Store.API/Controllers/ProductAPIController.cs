@@ -20,12 +20,7 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult Create([FromBody] ProductDTO dto)
         {
-            if (_service.CanConnection() == false)
-                return StatusCode(StatusCodes.Status500InternalServerError, "No connection to the database");
-            if (dto == null) return BadRequest();
-            dto.Id = Guid.Empty;
-            _service.Create(dto);
-            return Ok();
+            return _service.Create(dto);
         }
 
         [HttpPatch("updateQuantities:id={id}&q={q:int}")]
@@ -34,11 +29,7 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult UpdateQuantities(Guid id, int decreases)
         {
-            if (_service.CanConnection() == false)
-                return StatusCode(StatusCodes.Status500InternalServerError, "No connection to the database");
-            if (id == Guid.Empty || decreases < 1) return BadRequest();
-            _service.UpdateQuantities(id, decreases);
-            return Ok();
+            return _service.UpdateQuantities(id, decreases); ;
         }
 
         [HttpGet("id=")]
@@ -48,14 +39,7 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult<ProductDTO> GetById(Guid id)
         {
-            if (_service.CanConnection() == false)
-                return StatusCode(StatusCodes.Status500InternalServerError, "No connection to the database");
-            var dto = _service.FindById(id);
-            if (dto == null)
-            {
-                return NotFound();
-            }
-            return Ok(dto);
+            return _service.FindById(id);
         }
 
         [HttpGet("getAll")]
@@ -63,9 +47,7 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult<IEnumerable<ProductDTO>> GetAll()
         {
-            if (_service.CanConnection() == false) return StatusCode(500, "No connection to the database");
-            var listDto = _service.FindAll();
-            return Ok(listDto);
+            return _service.FindAll();
         }
 
         [HttpDelete("delete=")]
@@ -74,12 +56,7 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult Delete(Guid guid)
         {
-            if (_service.CanConnection() == false)
-                return StatusCode(StatusCodes.Status500InternalServerError, "No connection to the database");
-            if (guid == Guid.Empty)
-                return BadRequest();
-            _service.Delete(guid);
-            return Ok();
+            return _service.Delete(guid);
         }
     }
 }
