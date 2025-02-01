@@ -16,7 +16,7 @@ namespace Store.DataAccess.Postgress.Models
         public DateTime LastUpdateDate { get; set; } = DateTime.UtcNow; // число последней закупки
         public Guid SupplierId { get; set; }
         public SupplierEntiry? Supplier { get; set; }
-        public Guid ImageId{ get; set; }
+        public Guid? ImageId{ get; set; }
         public ImagesEntity? Image { get; set; }
     }
 }

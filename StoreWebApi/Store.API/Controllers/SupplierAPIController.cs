@@ -21,24 +21,15 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult Create([FromBody] SupplierDTO dto)
         {
-            if (_service.CanConnection() == false)
-                return StatusCode(StatusCodes.Status500InternalServerError, "No connection to the database");
-            if (dto == null) return BadRequest();
-            dto.Id = Guid.Empty;
-            _service.Create(dto);
-            return Ok();
+            return _service.Create(dto);
         }
-        [HttpPatch("updateAddress:id={id}&{address}")]
+        [HttpPatch("updateAddress:id={id}&")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult UpdateAddress(Guid id, [FromBody] AddressEntity addressEntity)
+        public ActionResult UpdateAddress(Guid id, [FromBody] AddressDTO addressEntity)
         {
-            if (_service.CanConnection() == false)
-                return StatusCode(StatusCodes.Status500InternalServerError, "No connection to the database");
-            if (id == Guid.Empty || addressEntity == null) return BadRequest();
-            _service.UpdateAddress(id, addressEntity);
-            return Ok();
+            return _service.UpdateAddress(id, addressEntity);
         }
         [HttpDelete("delete=")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -46,23 +37,15 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult Delete(Guid guid)
         {
-            if (_service.CanConnection() == false)
-                return StatusCode(StatusCodes.Status500InternalServerError, "No connection to the database");
-            if (guid == Guid.Empty)
-                return BadRequest();
-            _service.Delete(guid);
-            return Ok();
+            return _service.Delete(guid);
         }
-        [HttpGet("limit={limit:int}&page={page:int}")]
+        [HttpGet("getAll")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult<IEnumerable<SupplierDTO>> GetAll()
         {
-            if (_service.CanConnection() == false)
-                return StatusCode(StatusCodes.Status500InternalServerError, "No connection to the database");
-            var listDto = _service.FindAll();
-            return Ok(listDto);
+            return _service.FindAll();
         }
 
         [HttpGet("id=")]
@@ -72,14 +55,7 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult<SupplierDTO> GetById(Guid id)
         {
-            if (_service.CanConnection() == false)
-                return StatusCode(StatusCodes.Status500InternalServerError, "No connection to the database");
-            var dto = _service.FindById(id);
-            if (dto == null)
-            {
-                return NotFound();
-            }
-            return Ok(dto);
+            return _service.FindById(id);
         }
     }
 }

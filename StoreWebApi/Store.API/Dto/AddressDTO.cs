@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace Store.API.Dto
 {
-    public class AdressDTO
+    public class AddressDTO
     {
         [JsonPropertyName("id")]
         public Guid Id { get; set; }

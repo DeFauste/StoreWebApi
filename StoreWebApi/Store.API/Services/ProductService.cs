@@ -8,8 +8,8 @@ namespace Store.API.Services
 {
     public class ProductService
     {
-        IProductRepository _repository;
-        IMapper _mapper;
+        private readonly IProductRepository _repository;
+        private readonly IMapper _mapper;
         public ProductService(IProductRepository repository, IMapper mapper)
         {
             _repository = repository;
@@ -75,7 +75,8 @@ namespace Store.API.Services
                 { StatusCode = StatusCodes.Status404NotFound };
 
             var dto = _mapper.Map<ProductEntity, ProductDTO>(entity);
-            return dto;
+            return new OkObjectResult(dto)
+            { StatusCode = StatusCodes.Status200OK }; ;
         }
         public ActionResult<IEnumerable<ProductDTO>> FindAll()
         {

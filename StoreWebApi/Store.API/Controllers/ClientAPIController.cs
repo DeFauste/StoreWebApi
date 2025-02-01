@@ -73,9 +73,9 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult UpdateAddress(Guid id, [FromBody]AddressEntity addressEntity)
+        public ActionResult UpdateAddress(Guid id, [FromBody]AddressDTO addressdto)
         {       
-            return _service.UpdateAddress(id, addressEntity);
+            return _service.UpdateAddress(id, addressdto);
         }
 
 

@@ -101,9 +101,10 @@ namespace Store.API.Services
                 { StatusCode = StatusCodes.Status404NotFound };
 
             var dto = _mapper.Map<ClientEntity, ClientDTO>(entity);
-            return dto;
+            return new OkObjectResult(dto)
+            { StatusCode = StatusCodes.Status200OK }; ;
         }
-        public ActionResult UpdateAddress(Guid id, AddressEntity address)
+        public ActionResult UpdateAddress(Guid id, AddressDTO address)
         {
             if (_clientRepository.CanConnection() == false)
                 return new ObjectResult("No connection to the database")
@@ -115,7 +116,8 @@ namespace Store.API.Services
 
             var clientEntity = new ClientEntity { Id = id };
             address.Id = Guid.Empty;
-            var createdAddress = _addressRepository.Add(address);
+            var addressEntity = _mapper.Map<AddressDTO, AddressEntity>(address);
+            var createdAddress = _addressRepository.Add(addressEntity);
             _clientRepository.Update(clientEntity, createdAddress);
 
             return new OkObjectResult($"Client with Guid {id} updated")

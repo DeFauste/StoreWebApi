@@ -249,8 +249,8 @@
         "IsRequired": true
       },
       {
-        "Name": "addressEntity",
-        "Type": "Store.DataAccess.Postgress.Models.AddressEntity",
+        "Name": "addressdto",
+        "Type": "Store.API.Dto.AddressDTO",
         "IsRequired": true
       }
     ],
@@ -557,6 +557,40 @@
   },
   {
     "ContainingType": "Store.API.Controllers.SupplierAPIController",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/supplier/getAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Store.API.Dto.SupplierDTO, Store.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "Store.API.Controllers.SupplierAPIController",
     "Method": "GetById",
     "RelativePath": "api/v1/supplier/id=",
     "HttpMethod": "GET",
@@ -606,51 +640,6 @@
   },
   {
     "ContainingType": "Store.API.Controllers.SupplierAPIController",
-    "Method": "GetAll",
-    "RelativePath": "api/v1/supplier/limit={limit}\u0026page={page}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "limit",
-        "Type": "",
-        "IsRequired": true
-      },
-      {
-        "Name": "page",
-        "Type": "",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Store.API.Dto.SupplierDTO, Store.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 500
-      }
-    ]
-  },
-  {
-    "ContainingType": "Store.API.Controllers.SupplierAPIController",
     "Method": "Create",
     "RelativePath": "api/v1/supplier/newSupplier=",
     "HttpMethod": "POST",
@@ -688,7 +677,7 @@
   {
     "ContainingType": "Store.API.Controllers.SupplierAPIController",
     "Method": "UpdateAddress",
-    "RelativePath": "api/v1/supplier/updateAddress:id={id}\u0026{address}",
+    "RelativePath": "api/v1/supplier/updateAddress:id={id}\u0026",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -700,12 +689,7 @@
       },
       {
         "Name": "addressEntity",
-        "Type": "Store.DataAccess.Postgress.Models.AddressEntity",
-        "IsRequired": true
-      },
-      {
-        "Name": "address",
-        "Type": "",
+        "Type": "Store.API.Dto.AddressDTO",
         "IsRequired": true
       }
     ],
