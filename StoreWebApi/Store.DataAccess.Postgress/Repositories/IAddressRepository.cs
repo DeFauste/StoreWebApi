@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Store.DataAccess.Postgress.Repositories
 {
-    internal interface IAddressRepository: IRepositiry<AddressEntity, AddressEntity, Guid>
+    public interface IAddressRepository: IRepositiry<AddressEntity, AddressEntity, Guid>
     {
     }
 }

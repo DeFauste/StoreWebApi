@@ -23,6 +23,7 @@ builder.Services.AddDbContext<StoreDbContext>(
 
 builder.Services.AddScoped<IClientRepository, ClientRepositoryImpl>();
 builder.Services.AddScoped<IProductRepository, ProductRepositoryImpl>();
+builder.Services.AddScoped<IAddressRepository, AdressRepositoryImpl>();
 builder.Services.AddScoped<ClientService, ClientService>(); 
 builder.Services.AddScoped<ProductService, ProductService>();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
