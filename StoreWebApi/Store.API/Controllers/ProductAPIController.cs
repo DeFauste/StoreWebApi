@@ -23,11 +23,11 @@ namespace Store.API.Controllers
             return _service.Create(dto);
         }
 
-        [HttpPatch("updateQuantities:id={id}&q={q:int}")]
+        [HttpPatch("updateQuantities:id={id}&decreases={decreases}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult UpdateQuantities(Guid id, int decreases)
+        public ActionResult UpdateQuantities(Guid id,int decreases)
         {
             return _service.UpdateQuantities(id, decreases); ;
         }

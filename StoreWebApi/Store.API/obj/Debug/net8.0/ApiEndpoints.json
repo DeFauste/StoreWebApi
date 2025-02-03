@@ -476,7 +476,7 @@
   {
     "ContainingType": "Store.API.Controllers.ProductAPIController",
     "Method": "UpdateQuantities",
-    "RelativePath": "api/v1/product/updateQuantities:id={id}\u0026q={q}",
+    "RelativePath": "api/v1/product/updateQuantities:id={id}\u0026decreases={decreases}",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
@@ -489,11 +489,6 @@
       {
         "Name": "decreases",
         "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "q",
-        "Type": "",
         "IsRequired": true
       }
     ],

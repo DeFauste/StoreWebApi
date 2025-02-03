@@ -56,7 +56,7 @@ namespace Store.API.Services
             var entity = new ProductEntity { Id = id };
 
             _repository.Update(entity, decreases);
-            return new OkObjectResult("New product added")
+            return new OkObjectResult($"Product {id} uodated")
             { StatusCode = StatusCodes.Status200OK };
         }
         public ActionResult<ProductDTO> FindById(Guid id)

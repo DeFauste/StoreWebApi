@@ -22,7 +22,7 @@ namespace Store.API.Dto
         [JsonPropertyName("supplier_id")]
         public Guid SupplierId { get; set; }
         [JsonPropertyName("image_id")]
-        public Guid ImageId { get; set; }
+        public Guid ImageId { get; set; } = Guid.Empty;
 
     }
 }

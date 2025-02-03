@@ -50,7 +50,7 @@ namespace Store.DataAccess.Postgress.Repositories.impl
         {
             return _dbContext.Product
                 .AsNoTracking()
-                .FirstOrDefault(p => p.Image == image);
+                .FirstOrDefault(p => p.Id == image.Id);
         }
 
         public void Update(ProductEntity entity, long decrease)

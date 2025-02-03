@@ -12,9 +12,6 @@ namespace Store.DataAccess.Postgress.Configurations
 
             builder.
                 HasOne(p => p.Supplier);
-
-            builder.
-                HasOne(p => p.Image);
         }
     }
 }
