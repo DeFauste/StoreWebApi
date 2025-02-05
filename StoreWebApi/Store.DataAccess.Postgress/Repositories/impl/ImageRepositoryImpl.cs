@@ -3,10 +3,10 @@ using Store.DataAccess.Postgress.Models;
 
 namespace Store.DataAccess.Postgress.Repositories.impl
 {
-    public class ImageRepository : IImageRepository
+    public class ImageRepositoryImpl : IImageRepository
     {
         private readonly StoreDbContext _dbContext;
-        public ImageRepository(StoreDbContext dbContext)
+        public ImageRepositoryImpl(StoreDbContext dbContext)
         {
             _dbContext = dbContext;
         }

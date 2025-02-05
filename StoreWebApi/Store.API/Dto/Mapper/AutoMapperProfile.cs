@@ -15,6 +15,8 @@ namespace Store.API.Dto.Mapper
             CreateMap<SupplierEntiry, SupplierDTO>();
             CreateMap<AddressDTO, AddressEntity>();
             CreateMap<AddressEntity, AddressDTO>();
+            CreateMap<ImagesEntity, ImageDTO>();
+            CreateMap<ImageDTO,ImagesEntity>();
         }
     }
 }

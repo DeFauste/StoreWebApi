@@ -58,7 +58,10 @@ namespace Store.DataAccess.Postgress.Repositories.impl
             var product = _dbContext.Product
                 .FirstOrDefault(p => p.Id == entity.Id)
                 ?? throw new Exception();
-            product.AvailableStock -= decrease;
+            if(decrease != 0)
+                product.AvailableStock -= decrease;
+            if(entity.ImageId != Guid.Empty)
+                product.ImageId = entity.ImageId;
             _dbContext.SaveChanges();    
         }
         public bool CanConnection()
