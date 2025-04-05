@@ -13,6 +13,8 @@ namespace Store.API.Dto
         public string Category { get; set; } = string.Empty;
         [JsonPropertyName("price")]
         public double Price { get; set; } = 0;
+        [JsonPropertyName("available_stock ")]
+        public long AvailableStock { get; set; } = 0;
         [JsonPropertyName("image_id")]
         public Guid ImageId { get; set; } = Guid.Empty;
     }

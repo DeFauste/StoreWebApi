@@ -66,7 +66,7 @@ namespace Store.API.Services
             _repository.Update(suppEntity, addressEntity);
             _repository.SaveChange();
 
-            var suppReadDto = _mapper.Map<SupplierReadDTO>(FindById(id));
+            var suppReadDto = _mapper.Map<SupplierReadDTO>(_repository.FindById(id));
 
             return new OkObjectResult($"Client with Guid {id} updated")
             { StatusCode = StatusCodes.Status200OK, Value = suppReadDto };

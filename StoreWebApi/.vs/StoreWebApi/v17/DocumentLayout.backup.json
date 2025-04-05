@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\dto\\productreaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\dto\\productreaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\dto\\productcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\dto\\productcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\controllers\\productapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\controllers\\productapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\services\\supplierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\services\\supplierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\controllers\\supplierapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\controllers\\supplierapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\dto\\mapper\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\dto\\mapper\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,25 +43,90 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ProductReadDTO.cs",
+              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Dto\\ProductReadDTO.cs",
+              "RelativeDocumentMoniker": "Store.API\\Dto\\ProductReadDTO.cs",
+              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Dto\\ProductReadDTO.cs",
+              "RelativeToolTip": "Store.API\\Dto\\ProductReadDTO.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBAAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-05T14:59:02.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "Store.API\\Services\\ProductService.cs",
+              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Services\\ProductService.cs",
+              "RelativeToolTip": "Store.API\\Services\\ProductService.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAcwCAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-05T14:56:27.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductAPIController.cs",
+              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Controllers\\ProductAPIController.cs",
+              "RelativeDocumentMoniker": "Store.API\\Controllers\\ProductAPIController.cs",
+              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Controllers\\ProductAPIController.cs",
+              "RelativeToolTip": "Store.API\\Controllers\\ProductAPIController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwBYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-05T14:56:23.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductCreateDTO.cs",
+              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Dto\\ProductCreateDTO.cs",
+              "RelativeDocumentMoniker": "Store.API\\Dto\\ProductCreateDTO.cs",
+              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Dto\\ProductCreateDTO.cs",
+              "RelativeToolTip": "Store.API\\Dto\\ProductCreateDTO.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-05T14:56:04.408Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AutoMapperProfile.cs",
+              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Dto\\Mapper\\AutoMapperProfile.cs",
+              "RelativeDocumentMoniker": "Store.API\\Dto\\Mapper\\AutoMapperProfile.cs",
+              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Dto\\Mapper\\AutoMapperProfile.cs",
+              "RelativeToolTip": "Store.API\\Dto\\Mapper\\AutoMapperProfile.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-05T14:50:26.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "SupplierService.cs",
               "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Services\\SupplierService.cs",
               "RelativeDocumentMoniker": "Store.API\\Services\\SupplierService.cs",
               "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Services\\SupplierService.cs",
               "RelativeToolTip": "Store.API\\Services\\SupplierService.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAIwEAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAIAwwEEAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-05T12:44:48.929Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "SupplierAPIController.cs",
               "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Controllers\\SupplierAPIController.cs",
               "RelativeDocumentMoniker": "Store.API\\Controllers\\SupplierAPIController.cs",
               "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Controllers\\SupplierAPIController.cs",
               "RelativeToolTip": "Store.API\\Controllers\\SupplierAPIController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwAsAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-05T12:44:43.101Z",
               "EditorCaption": ""
