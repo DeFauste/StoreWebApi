@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Store.DataAccess.Postgress.Models;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Store.DataAccess.Postgress.Repositories.impl
 {
@@ -19,9 +18,9 @@ namespace Store.DataAccess.Postgress.Repositories.impl
                     .ExecuteDelete();
         }
 
-        public  IEnumerable<ClientEntity> FindAll()
+        public IEnumerable<ClientEntity> FindAll()
         {
-            return  _dbContext.Client
+            return _dbContext.Client
                         .AsNoTracking()
                         .ToList();
         }

@@ -13,13 +13,13 @@ namespace Store.API.Dto.Mapper
             CreateMap<ClientCreateDTO, ClientEntity>();
             //Address
             CreateMap<AddressEntity, AddressReadDTO>();
-            CreateMap<AddressCreateDTO,AddressEntity>();
+            CreateMap<AddressCreateDTO, AddressEntity>();
             //Image
             CreateMap<ImagesEntity, ImageReadDTO>();
-            CreateMap<ImageCreateDTO,ImagesEntity>();
+            CreateMap<ImageCreateDTO, ImagesEntity>();
             //Product
             CreateMap<ProductEntity, ProductReadDTO>();
-            CreateMap<ProductCreateDTO,ProductEntity>();
+            CreateMap<ProductCreateDTO, ProductEntity>();
             //Supplier
             CreateMap<SupplierEntiry, SupplierReadDTO>();
             CreateMap<SupplierCreateDTO, SupplierEntiry>();

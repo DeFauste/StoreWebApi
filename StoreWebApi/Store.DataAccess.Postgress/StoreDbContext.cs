@@ -6,9 +6,9 @@ namespace Store.DataAccess.Postgress
 {
     public class StoreDbContext : DbContext
     {
-        public StoreDbContext(DbContextOptions<StoreDbContext> options): base(options)
+        public StoreDbContext(DbContextOptions<StoreDbContext> options) : base(options)
         {
-            
+
         }
         public DbSet<AddressEntity> Address { get; set; }
         public DbSet<ClientEntity> Client { get; set; }

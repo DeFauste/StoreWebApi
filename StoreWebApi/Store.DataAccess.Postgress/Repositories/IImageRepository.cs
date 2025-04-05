@@ -2,7 +2,7 @@
 
 namespace Store.DataAccess.Postgress.Repositories
 {
-    public interface IImageRepository: IRepositiry<ImagesEntity, byte[], Guid>
+    public interface IImageRepository : IRepositiry<ImagesEntity, byte[], Guid>
     {
     }
 }

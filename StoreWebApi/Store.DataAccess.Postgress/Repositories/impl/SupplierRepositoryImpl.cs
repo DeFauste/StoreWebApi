@@ -53,7 +53,7 @@ namespace Store.DataAccess.Postgress.Repositories.impl
             _dbContext.Supplier
                 .Where(s => s.Id == entity.Id)
                 .ExecuteUpdate(a => a
-                .SetProperty(s =>  s.AddressId, data.Id));
+                .SetProperty(s => s.AddressId, data.Id));
         }
         public bool CanConnection()
         {

@@ -6,7 +6,7 @@ namespace Store.API.Controllers
 {
     [ApiController]
     [Route("api/v1/images")]
-    public class ImagesAPIController: ControllerBase
+    public class ImagesAPIController : ControllerBase
     {
         private ImageService _service;
         public ImagesAPIController(ImageService service)
@@ -18,9 +18,9 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<ImageReadDTO> Create(Guid idProduct,[FromHeader] byte[] image)
+        public ActionResult<ImageReadDTO> Create(Guid idProduct, [FromHeader] byte[] image)
         {
-            return _service.Create(image, idProduct); 
+            return _service.Create(image, idProduct);
         }
 
         [HttpGet("id=")]

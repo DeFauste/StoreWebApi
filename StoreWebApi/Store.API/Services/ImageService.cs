@@ -11,7 +11,7 @@ namespace Store.API.Services
         IImageRepository _repositoryImage;
         IMapper _mapper;
         IProductRepository _productRepository;
-        public ImageService(IImageRepository repositoryImage, IProductRepository productRepository ,IMapper mapper)
+        public ImageService(IImageRepository repositoryImage, IProductRepository productRepository, IMapper mapper)
         {
             _repositoryImage = repositoryImage;
             _mapper = mapper;
@@ -35,9 +35,9 @@ namespace Store.API.Services
             var productEntity = _productRepository.FindById(idProduct);
             if (productEntity == null)
                 return new BadRequestObjectResult($"Product Guid {idProduct} not exist")
-                { StatusCode = StatusCodes.Status404NotFound};
+                { StatusCode = StatusCodes.Status404NotFound };
 
-            if(productEntity.ImageId != Guid.Empty)
+            if (productEntity.ImageId != Guid.Empty)
                 return new BadRequestObjectResult("Image exist, using update")
                 { StatusCode = StatusCodes.Status400BadRequest };
 
@@ -51,7 +51,7 @@ namespace Store.API.Services
             _productRepository.Update(productEntity, 0);
             _productRepository.SaveChange();
 
-            return new OkObjectResult(dto) {StatusCode = StatusCodes.Status201Created };
+            return new OkObjectResult(dto) { StatusCode = StatusCodes.Status201Created };
         }
         public ActionResult<ImageReadDTO> FindById(Guid id)
         {
@@ -112,7 +112,7 @@ namespace Store.API.Services
                 { StatusCode = StatusCodes.Status404NotFound };
 
             var entity = _repositoryImage.FindById(product.ImageId);
-            if(entity == null) entity = new ImagesEntity();
+            if (entity == null) entity = new ImagesEntity();
 
             var dto = _mapper.Map<ImageReadDTO>(entity);
             return new OkObjectResult(dto)

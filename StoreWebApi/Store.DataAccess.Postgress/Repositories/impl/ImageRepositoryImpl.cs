@@ -30,7 +30,7 @@ namespace Store.DataAccess.Postgress.Repositories.impl
         {
             return _dbContext.Images
                 .AsNoTracking()
-                .ToList(); 
+                .ToList();
         }
 
         public ImagesEntity FindById(Guid id)

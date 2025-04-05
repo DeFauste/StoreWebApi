@@ -6,7 +6,7 @@ namespace Store.API.Controllers
 {
     [ApiController]
     [Route("api/v1/product")]
-    public class ProductAPIController: ControllerBase
+    public class ProductAPIController : ControllerBase
     {
         private ProductService _service;
         public ProductAPIController(ProductService service)
@@ -27,7 +27,7 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<ProductReadDTO> UpdateQuantities(Guid id,int decreases)
+        public ActionResult<ProductReadDTO> UpdateQuantities(Guid id, int decreases)
         {
             return _service.UpdateQuantities(id, decreases); ;
         }

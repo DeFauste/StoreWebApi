@@ -2,7 +2,7 @@
 
 namespace Store.DataAccess.Postgress.Repositories
 {
-    public interface ISupplierRepository: IRepositiry<SupplierEntiry, AddressEntity, Guid>
+    public interface ISupplierRepository : IRepositiry<SupplierEntiry, AddressEntity, Guid>
     {
     }
 }

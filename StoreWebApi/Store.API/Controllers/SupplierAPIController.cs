@@ -1,13 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Store.API.Dto;
 using Store.API.Services;
-using Store.DataAccess.Postgress.Models;
 
 namespace Store.API.Controllers
 {
     [ApiController]
     [Route("api/v1/supplier")]
-    public class SupplierAPIController:ControllerBase
+    public class SupplierAPIController : ControllerBase
     {
         private SupplierService _service;
         public SupplierAPIController(SupplierService service)

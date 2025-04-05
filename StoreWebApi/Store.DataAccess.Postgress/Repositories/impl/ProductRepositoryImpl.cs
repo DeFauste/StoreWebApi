@@ -35,7 +35,7 @@ namespace Store.DataAccess.Postgress.Repositories.impl
 
         public ProductEntity FindById(Guid id)
         {
-            return  _dbContext.Product
+            return _dbContext.Product
                 .AsNoTracking()
                 .FirstOrDefault(p => p.Id == id);
         }
@@ -45,7 +45,7 @@ namespace Store.DataAccess.Postgress.Repositories.impl
             return _dbContext.Product
                 .AsNoTracking()
                 .FirstOrDefault(p => p.Supplier == supplier);
-                
+
         }
 
         public ProductEntity FindBySupplier(ImagesEntity image)
@@ -64,10 +64,10 @@ namespace Store.DataAccess.Postgress.Repositories.impl
             var product = _dbContext.Product
                 .FirstOrDefault(p => p.Id == entity.Id)
                 ?? throw new Exception();
-            if(decrease != 0)
+            if (decrease != 0)
                 product.AvailableStock -= decrease;
-            if(entity.ImageId != Guid.Empty)
-                product.ImageId = entity.ImageId;   
+            if (entity.ImageId != Guid.Empty)
+                product.ImageId = entity.ImageId;
         }
         public bool CanConnection()
         {

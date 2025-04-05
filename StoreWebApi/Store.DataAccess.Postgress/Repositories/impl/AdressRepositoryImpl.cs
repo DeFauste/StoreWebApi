@@ -30,7 +30,7 @@ namespace Store.DataAccess.Postgress.Repositories.impl
         {
             return _dbContext.Address
                 .AsNoTracking()
-                .ToList();  
+                .ToList();
         }
 
         public AddressEntity FindById(Guid id)
@@ -45,7 +45,8 @@ namespace Store.DataAccess.Postgress.Repositories.impl
             if (entity == null)
             {
                 throw new ArgumentNullException(nameof(entity));
-            } else if(data == null)
+            }
+            else if (data == null)
             {
                 throw new ArgumentNullException(nameof(data));
             }

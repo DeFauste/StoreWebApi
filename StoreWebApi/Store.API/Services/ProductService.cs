@@ -29,8 +29,8 @@ namespace Store.API.Services
                 return new BadRequestObjectResult("Object cannot be null")
                 { StatusCode = StatusCodes.Status400BadRequest };
 
-           try
-           {
+            try
+            {
                 var productEntity = _mapper.Map<ProductEntity>(productCreateDto);
                 _repository.Create(productEntity);
                 _repository.SaveChange();
@@ -38,22 +38,22 @@ namespace Store.API.Services
                 var productReadDto = _mapper.Map<ProductReadDTO>(productEntity);
                 return new OkObjectResult(productReadDto)
                 { StatusCode = StatusCodes.Status201Created };
-           }
-           catch (Exception ex)
-           {
-               return new BadRequestObjectResult("Invalid data")
-               { StatusCode = StatusCodes.Status400BadRequest };
-           }
+            }
+            catch (Exception ex)
+            {
+                return new BadRequestObjectResult("Invalid data")
+                { StatusCode = StatusCodes.Status400BadRequest };
+            }
         }
         public ActionResult<ProductReadDTO> UpdateQuantities(Guid id, long decreases)
         {
             if (_repository.CanConnection() == false)
                 return new ObjectResult("No connection to the database")
                 { StatusCode = StatusCodes.Status500InternalServerError };
-           
-            if (id == Guid.Empty || decreases < 1) 
+
+            if (id == Guid.Empty || decreases < 1)
                 return new BadRequestObjectResult("Object cannot be null or decreases < 1")
-            { StatusCode = StatusCodes.Status400BadRequest };
+                { StatusCode = StatusCodes.Status400BadRequest };
 
             var entity = new ProductEntity { Id = id };
 
