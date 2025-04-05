@@ -5,8 +5,7 @@ namespace Store.DataAccess.Postgress.Repositories
 {
     public interface IProductRepository: IRepositiry<ProductEntity, long,Guid>
     {
-        ProductEntity? FindBySupplier(SupplierEntiry supplier);
-        ProductEntity? FindBySupplier(ImagesEntity image);
-        bool CanConnection();
+        ProductEntity FindBySupplier(SupplierEntiry supplier);
+        ProductEntity FindBySupplier(ImagesEntity image);
     }
 }

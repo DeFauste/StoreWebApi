@@ -3,18 +3,15 @@ using System.Text.Json.Serialization;
 
 namespace Store.API.Dto
 {
-    public class AddressDTO
+    public class AddressReadDTO
     {
         [JsonPropertyName("id")]
         public Guid Id { get; set; }
-        [Required, MaxLength(30)]
         [JsonPropertyName("country")]
-        public string Country { get; set; } = string.Empty;
-        [Required, MaxLength(30)]
+        public string Country { get; set; }
         [JsonPropertyName("city")]
-        public string City { get; set; } = string.Empty;
-        [Required, MaxLength(30)]
+        public string City { get; set; }
         [JsonPropertyName("street")]
-        public string Street { get; set; } = string.Empty;
+        public string Street { get; set; }
     }
 }

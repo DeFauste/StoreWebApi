@@ -10,11 +10,13 @@ namespace Store.DataAccess.Postgress.Repositories.impl
         {
             _dbContext = dbContext;
         }
-        public ProductEntity Add(ProductEntity entity)
+        public void Create(ProductEntity entity)
         {
-            var creted = _dbContext.Product.Add(entity);
-            _dbContext.SaveChanges();
-            return creted.Entity;
+            if (entity == null)
+            {
+                throw new ArgumentNullException(nameof(entity));
+            }
+            _dbContext.Product.Add(entity);
         }
 
         public void DeleteById(Guid id)
@@ -24,21 +26,21 @@ namespace Store.DataAccess.Postgress.Repositories.impl
                 .ExecuteDelete();
         }
 
-        public List<ProductEntity> FindAll()
+        public IEnumerable<ProductEntity> FindAll()
         {
             return _dbContext.Product
                 .AsNoTracking()
                 .ToList();
         }
 
-        public ProductEntity? FindById(Guid id)
+        public ProductEntity FindById(Guid id)
         {
             return  _dbContext.Product
                 .AsNoTracking()
                 .FirstOrDefault(p => p.Id == id);
         }
 
-        public ProductEntity? FindBySupplier(SupplierEntiry supplier)
+        public ProductEntity FindBySupplier(SupplierEntiry supplier)
         {
             return _dbContext.Product
                 .AsNoTracking()
@@ -46,7 +48,7 @@ namespace Store.DataAccess.Postgress.Repositories.impl
                 
         }
 
-        public ProductEntity? FindBySupplier(ImagesEntity image)
+        public ProductEntity FindBySupplier(ImagesEntity image)
         {
             return _dbContext.Product
                 .AsNoTracking()
@@ -55,18 +57,26 @@ namespace Store.DataAccess.Postgress.Repositories.impl
 
         public void Update(ProductEntity entity, long decrease)
         {
+            if (entity == null)
+            {
+                throw new ArgumentNullException(nameof(entity));
+            }
             var product = _dbContext.Product
                 .FirstOrDefault(p => p.Id == entity.Id)
                 ?? throw new Exception();
             if(decrease != 0)
                 product.AvailableStock -= decrease;
             if(entity.ImageId != Guid.Empty)
-                product.ImageId = entity.ImageId;
-            _dbContext.SaveChanges();    
+                product.ImageId = entity.ImageId;   
         }
         public bool CanConnection()
         {
             return _dbContext.Database.CanConnect();
+        }
+
+        public bool SaveChange()
+        {
+            return (_dbContext.SaveChanges() >= 0);
         }
     }
 }

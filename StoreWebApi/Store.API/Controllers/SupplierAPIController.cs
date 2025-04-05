@@ -16,10 +16,10 @@ namespace Store.API.Controllers
         }
 
         [HttpPost("newSupplier=")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult Create([FromBody] SupplierDTO dto)
+        public ActionResult<SupplierReadDTO> Create([FromBody] SupplierCreateDTO dto)
         {
             return _service.Create(dto);
         }
@@ -27,7 +27,7 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult UpdateAddress(Guid id, [FromBody] AddressDTO addressEntity)
+        public ActionResult<SupplierReadDTO> UpdateAddress(Guid id, [FromBody] AddressCreateDTO addressEntity)
         {
             return _service.UpdateAddress(id, addressEntity);
         }
@@ -43,7 +43,7 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<IEnumerable<SupplierDTO>> GetAll()
+        public ActionResult<IEnumerable<SupplierReadDTO>> GetAll()
         {
             return _service.FindAll();
         }
@@ -53,7 +53,7 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<SupplierDTO> GetById(Guid id)
+        public ActionResult<SupplierReadDTO> GetById(Guid id)
         {
             return _service.FindById(id);
         }

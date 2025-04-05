@@ -19,54 +19,60 @@ namespace Store.API.Services
         {
             return _repository.CanConnection();
         }
-        public ActionResult Create(ProductDTO dto)
+        public ActionResult<ProductReadDTO> Create(ProductCreateDTO productCreateDto)
         {
             if (_repository.CanConnection() == false)
                 return new ObjectResult("No connection to the database")
                 { StatusCode = StatusCodes.Status500InternalServerError };
 
-            if (dto == null)
+            if (productCreateDto == null)
                 return new BadRequestObjectResult("Object cannot be null")
                 { StatusCode = StatusCodes.Status400BadRequest };
 
             try
             {
-                dto.Id = Guid.Empty;
-                var entity = _mapper.Map<ProductDTO, ProductEntity>(dto);
-                _repository.Add(entity);
+                var productEntity = _mapper.Map<ProductEntity>(productCreateDto);
+                _repository.Create(productEntity);
+                _repository.SaveChange();
+
+                var productReadDto = _mapper.Map<ProductReadDTO>(productEntity);
+                return new OkObjectResult(productReadDto)
+                { StatusCode = StatusCodes.Status201Created };
             }
             catch (Exception ex)
             {
                 return new BadRequestObjectResult("Invalid data")
                 { StatusCode = StatusCodes.Status400BadRequest };
             }
-            return new OkObjectResult("New product added")
-            { StatusCode = StatusCodes.Status200OK };
         }
-        public ActionResult UpdateQuantities(Guid id, long decreases)
+        public ActionResult<ProductReadDTO> UpdateQuantities(Guid id, long decreases)
         {
             if (_repository.CanConnection() == false)
                 return new ObjectResult("No connection to the database")
                 { StatusCode = StatusCodes.Status500InternalServerError };
            
             if (id == Guid.Empty || decreases < 1) 
-                return new BadRequestObjectResult("Object cannot be null")
+                return new BadRequestObjectResult("Object cannot be null or decreases < 1")
             { StatusCode = StatusCodes.Status400BadRequest };
 
             var entity = new ProductEntity { Id = id };
 
             _repository.Update(entity, decreases);
+            _repository.SaveChange();
+
+            var productReadDto = _mapper.Map<ProductReadDTO>(entity);
+
             return new OkObjectResult($"Product {id} uodated")
-            { StatusCode = StatusCodes.Status200OK };
+            { StatusCode = StatusCodes.Status200OK, Value = productReadDto };
         }
-        public ActionResult<ProductDTO> FindById(Guid id)
+        public ActionResult<ProductReadDTO> FindById(Guid id)
         {
             if (_repository.CanConnection() == false)
                 return new ObjectResult("No connection to the database")
                 { StatusCode = StatusCodes.Status500InternalServerError };
 
             if (id == Guid.Empty)
-                return new BadRequestObjectResult("Object cannot be null")
+                return new BadRequestObjectResult("Object Guid cannot be null")
                 { StatusCode = StatusCodes.Status400BadRequest };
 
             var entity = _repository.FindById(id);
@@ -74,19 +80,21 @@ namespace Store.API.Services
                 return new ObjectResult($"The object with the Guid {id} was not found")
                 { StatusCode = StatusCodes.Status404NotFound };
 
-            var dto = _mapper.Map<ProductEntity, ProductDTO>(entity);
-            return new OkObjectResult(dto)
-            { StatusCode = StatusCodes.Status200OK }; ;
+            var productReadDto = _mapper.Map<ProductReadDTO>(entity);
+            return new OkObjectResult(productReadDto)
+            { StatusCode = StatusCodes.Status200OK };
         }
-        public ActionResult<IEnumerable<ProductDTO>> FindAll()
+        public ActionResult<IEnumerable<ProductReadDTO>> FindAll()
         {
             if (_repository.CanConnection() == false)
                 return new ObjectResult("No connection to the database")
                 { StatusCode = StatusCodes.Status500InternalServerError };
 
             var listEntity = _repository.FindAll();
-            var listDto = _mapper.Map<List<ProductEntity>, List<ProductDTO>>(listEntity);
-            return listDto;
+            var listReadDto = _mapper.Map<List<ProductReadDTO>>(listEntity);
+
+            return new OkObjectResult(listReadDto)
+            { StatusCode = StatusCodes.Status200OK };
         }
 
         public ActionResult Delete(Guid id)

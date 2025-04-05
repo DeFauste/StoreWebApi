@@ -19,77 +19,81 @@ namespace Store.API.Services
         }
         
         public bool CanConnection() => _clientRepository.CanConnection();
-        public ActionResult Create(ClientDTO clientDto)
+        public ActionResult<ClientReadDTO> Create(ClientCreateDTO clientCreateDto)
         {
             if (_clientRepository.CanConnection() == false)
                 return new ObjectResult("No connection to the database") 
                 { StatusCode = StatusCodes.Status500InternalServerError };
 
-            if (clientDto == null) 
+            if (clientCreateDto == null) 
                 return new BadRequestObjectResult("Object cannot be null")
                 { StatusCode = StatusCodes.Status400BadRequest };
             
-            clientDto.Id = Guid.Empty;
             try
             {
-                var clientEntity = _mapper.Map<ClientEntity>(clientDto);
+                var clientEntity = _mapper.Map<ClientEntity>(clientCreateDto);
                 clientEntity.RegistrationDate = DateTime.UtcNow;
-                var created = _clientRepository.Add(clientEntity);
+                _clientRepository.Create(clientEntity);
+                _clientRepository.SaveChange();
+                var clientReadDto = _mapper.Map<ClientReadDTO>(clientEntity);
+
+                return new OkObjectResult("New client added")
+                { StatusCode = StatusCodes.Status201Created, Value = clientReadDto };
             }
             catch (Exception ex)
             {
                 return new BadRequestObjectResult("Invalid data")
                 { StatusCode = StatusCodes.Status400BadRequest };
             }
-
-            return new OkObjectResult("New client added")
-                { StatusCode = StatusCodes.Status200OK };
-
         }
-        public ActionResult<IEnumerable<ClientDTO>> FindAll()
+        public ActionResult<IEnumerable<ClientReadDTO>> FindAll()
         {
             if (_clientRepository.CanConnection() == false)
                 return new ObjectResult("No connection to the database")
                 { StatusCode = StatusCodes.Status500InternalServerError };
 
             var listEntity = _clientRepository.FindAll();
-            var listDto = _mapper.Map<List<ClientEntity>, List<ClientDTO>>(listEntity);
-            return listDto;
+            var listReadDto = _mapper.Map<List<ClientReadDTO>>(listEntity);
+
+            return new OkObjectResult(listReadDto)
+            { StatusCode = StatusCodes.Status200OK};
         }
-        public ActionResult<IEnumerable<ClientDTO>> FindAll(int limit, int page)
+        public ActionResult<IEnumerable<ClientReadDTO>> FindAll(int limit, int page)
         {
             if (_clientRepository.CanConnection() == false)
                 return new ObjectResult("No connection to the database")
                 { StatusCode = StatusCodes.Status500InternalServerError };
+
             if(limit <= 0 || page <= 0) 
                 return new BadRequestObjectResult("The limit and page values must be greater than zero")
                 { StatusCode = StatusCodes.Status400BadRequest };
 
             var listEntities = _clientRepository.FindAll(limit, page); 
-            var listDto = _mapper.Map<List<ClientEntity>, List<ClientDTO>>(listEntities);
-            return listDto;
+            var listReadDto = _mapper.Map<List<ClientReadDTO>>(listEntities);
+            return new OkObjectResult(listReadDto)
+            { StatusCode = StatusCodes.Status200OK }; ;
         }
 
-        public ActionResult<IEnumerable<ClientDTO>> FindByNameAndSurname(string name, string surname)
+        public ActionResult<IEnumerable<ClientReadDTO>> FindByNameAndSurname(string name, string surname)
         {
             if (_clientRepository.CanConnection() == false)
                 return new ObjectResult("No connection to the database")
                 { StatusCode = StatusCodes.Status500InternalServerError };
 
-            List<ClientDTO> listDto;
-            List<ClientEntity> listEntities;
+
             if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(surname))
             {
-                listEntities = new List<ClientEntity>();
+                return new BadRequestObjectResult("Name or Surname is null or empty")
+                { StatusCode = StatusCodes.Status400BadRequest };
             }
-            else
-            {
-                listEntities = _clientRepository.FindClient(name, surname);
-            }
-            listDto = _mapper.Map<List<ClientEntity>, List<ClientDTO>>(listEntities);
-            return listDto;
+
+            IEnumerable<ClientEntity> listEntities = _clientRepository.FindClient(name, surname);
+            IEnumerable<ClientReadDTO> listReadDto = _mapper.Map<IEnumerable<ClientEntity>, IEnumerable<ClientReadDTO>>(listEntities);
+          
+            return new OkObjectResult(listReadDto)
+            { StatusCode = StatusCodes.Status200OK };
         }
-        public ActionResult<ClientDTO> FindById(Guid id)
+        public ActionResult<ClientReadDTO> FindById(Guid id)
         {
             if (_clientRepository.CanConnection() == false)
                 return new ObjectResult("No connection to the database")
@@ -100,28 +104,32 @@ namespace Store.API.Services
                 return new ObjectResult($"The object with the Guid {id} was not found")
                 { StatusCode = StatusCodes.Status404NotFound };
 
-            var dto = _mapper.Map<ClientEntity, ClientDTO>(entity);
-            return new OkObjectResult(dto)
-            { StatusCode = StatusCodes.Status200OK }; ;
+            var clientReadDto = _mapper.Map<ClientEntity, ClientReadDTO>(entity);
+
+            return new OkObjectResult(clientReadDto)
+            { StatusCode = StatusCodes.Status200OK };
         }
-        public ActionResult UpdateAddress(Guid id, AddressDTO address)
+        public ActionResult<ClientReadDTO> UpdateAddress(Guid id, AddressCreateDTO addressCreateDto)
         {
             if (_clientRepository.CanConnection() == false)
                 return new ObjectResult("No connection to the database")
                 { StatusCode = StatusCodes.Status500InternalServerError };
 
-            if (id == Guid.Empty || address == null) 
+            if (id == Guid.Empty || addressCreateDto == null) 
                 return new BadRequestObjectResult("Invalid data")
                 { StatusCode = StatusCodes.Status400BadRequest };
 
             var clientEntity = new ClientEntity { Id = id };
-            address.Id = Guid.Empty;
-            var addressEntity = _mapper.Map<AddressDTO, AddressEntity>(address);
-            var createdAddress = _addressRepository.Add(addressEntity);
-            _clientRepository.Update(clientEntity, createdAddress);
+
+            var addressEntity = _mapper.Map<AddressEntity>(addressCreateDto);
+            _addressRepository.Create(addressEntity);
+            _clientRepository.Update(clientEntity, addressEntity);
+            _clientRepository.SaveChange();
+            
+            var addressReadDto = _mapper.Map<AddressReadDTO>(addressEntity);
 
             return new OkObjectResult($"Client with Guid {id} updated")
-                    { StatusCode = StatusCodes.Status200OK };
+                    { StatusCode = StatusCodes.Status200OK, Value = addressReadDto};
         }
         public ActionResult Delete(Guid id)
         {
@@ -134,6 +142,8 @@ namespace Store.API.Services
                 { StatusCode = StatusCodes.Status404NotFound };
 
             _clientRepository.DeleteById(id);
+            _clientRepository.SaveChange();
+
             return new OkObjectResult($"Client with Guid {id} deleted")
             { StatusCode = StatusCodes.Status200OK };
         }

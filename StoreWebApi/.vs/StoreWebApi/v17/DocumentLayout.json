@@ -3,80 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\controllers\\imagesapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\controllers\\imagesapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\services\\imageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\services\\imageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\controllers\\supplierapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\controllers\\supplierapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.dataaccess.postgress\\repositories\\impl\\imagerepositoryimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|solutionrelative:store.dataaccess.postgress\\repositories\\impl\\imagerepositoryimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.dataaccess.postgress\\models\\imagesentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|solutionrelative:store.dataaccess.postgress\\models\\imagesentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\services\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\services\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\dto\\mapper\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\dto\\mapper\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.dataaccess.postgress\\repositories\\impl\\productrepositoryimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|solutionrelative:store.dataaccess.postgress\\repositories\\impl\\productrepositoryimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\dto\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\dto\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\controllers\\productapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\controllers\\productapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\dto\\addressdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\dto\\addressdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.dataaccess.postgress\\models\\cliententity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|solutionrelative:store.dataaccess.postgress\\models\\cliententity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.dataaccess.postgress\\configurations\\productconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|solutionrelative:store.dataaccess.postgress\\configurations\\productconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.dataaccess.postgress\\repositories\\impl\\supplierrepositoryimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|solutionrelative:store.dataaccess.postgress\\repositories\\impl\\supplierrepositoryimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.dataaccess.postgress\\models\\supplierentiry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E90C6D0-2D1D-4D9C-9F39-4D80330904C3}|Store.DataAccess.Postgress\\Store.DataAccess.Postgress.csproj|solutionrelative:store.dataaccess.postgress\\models\\supplierentiry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\services\\supplierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\services\\supplierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\controllers\\clientapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\controllers\\clientapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|c:\\users\\topha\\documents\\github\\storewebapi\\storewebapi\\store.api\\controllers\\supplierapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FD89D9F-32D9-43D2-B18A-D21785D33EE0}|Store.API\\Store.API.csproj|solutionrelative:store.api\\controllers\\supplierapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -86,249 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 602,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ImageRepositoryImpl.cs",
-              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Repositories\\impl\\ImageRepositoryImpl.cs",
-              "RelativeDocumentMoniker": "Store.DataAccess.Postgress\\Repositories\\impl\\ImageRepositoryImpl.cs",
-              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Repositories\\impl\\ImageRepositoryImpl.cs",
-              "RelativeToolTip": "Store.DataAccess.Postgress\\Repositories\\impl\\ImageRepositoryImpl.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T16:40:37.301Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ImagesAPIController.cs",
-              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Controllers\\ImagesAPIController.cs",
-              "RelativeDocumentMoniker": "Store.API\\Controllers\\ImagesAPIController.cs",
-              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Controllers\\ImagesAPIController.cs",
-              "RelativeToolTip": "Store.API\\Controllers\\ImagesAPIController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T13:10:17.12Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Program.cs",
-              "RelativeDocumentMoniker": "Store.API\\Program.cs",
-              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Program.cs",
-              "RelativeToolTip": "Store.API\\Program.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAApwDAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T12:51:38.684Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SupplierAPIController.cs",
-              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Controllers\\SupplierAPIController.cs",
-              "RelativeDocumentMoniker": "Store.API\\Controllers\\SupplierAPIController.cs",
-              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Controllers\\SupplierAPIController.cs",
-              "RelativeToolTip": "Store.API\\Controllers\\SupplierAPIController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T12:48:36.35Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AddressDTO.cs",
-              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Dto\\AddressDTO.cs",
-              "RelativeDocumentMoniker": "Store.API\\Dto\\AddressDTO.cs",
-              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Dto\\AddressDTO.cs",
-              "RelativeToolTip": "Store.API\\Dto\\AddressDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T13:15:03.898Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AutoMapperProfile.cs",
-              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Dto\\Mapper\\AutoMapperProfile.cs",
-              "RelativeDocumentMoniker": "Store.API\\Dto\\Mapper\\AutoMapperProfile.cs",
-              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Dto\\Mapper\\AutoMapperProfile.cs",
-              "RelativeToolTip": "Store.API\\Dto\\Mapper\\AutoMapperProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T13:12:28.907Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ProductAPIController.cs",
-              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Controllers\\ProductAPIController.cs",
-              "RelativeDocumentMoniker": "Store.API\\Controllers\\ProductAPIController.cs",
-              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Controllers\\ProductAPIController.cs",
-              "RelativeToolTip": "Store.API\\Controllers\\ProductAPIController.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowBsAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T17:18:39.753Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ClientEntity.cs",
-              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Models\\ClientEntity.cs",
-              "RelativeDocumentMoniker": "Store.DataAccess.Postgress\\Models\\ClientEntity.cs",
-              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Models\\ClientEntity.cs",
-              "RelativeToolTip": "Store.DataAccess.Postgress\\Models\\ClientEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T13:20:29.38Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "SupplierRepositoryImpl.cs",
-              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Repositories\\impl\\SupplierRepositoryImpl.cs",
-              "RelativeDocumentMoniker": "Store.DataAccess.Postgress\\Repositories\\impl\\SupplierRepositoryImpl.cs",
-              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Repositories\\impl\\SupplierRepositoryImpl.cs",
-              "RelativeToolTip": "Store.DataAccess.Postgress\\Repositories\\impl\\SupplierRepositoryImpl.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T13:12:14.153Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "SupplierEntiry.cs",
-              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Models\\SupplierEntiry.cs",
-              "RelativeDocumentMoniker": "Store.DataAccess.Postgress\\Models\\SupplierEntiry.cs",
-              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Models\\SupplierEntiry.cs",
-              "RelativeToolTip": "Store.DataAccess.Postgress\\Models\\SupplierEntiry.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T13:13:52.383Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ClientAPIController.cs",
-              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Controllers\\ClientAPIController.cs",
-              "RelativeDocumentMoniker": "Store.API\\Controllers\\ClientAPIController.cs",
-              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Controllers\\ClientAPIController.cs",
-              "RelativeToolTip": "Store.API\\Controllers\\ClientAPIController.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAcwEsAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T13:10:18.844Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 602,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ImageService.cs",
-              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Services\\ImageService.cs",
-              "RelativeDocumentMoniker": "Store.API\\Services\\ImageService.cs",
-              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Services\\ImageService.cs",
-              "RelativeToolTip": "Store.API\\Services\\ImageService.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAAACIAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T16:09:07.193Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ImagesEntity.cs",
-              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Models\\ImagesEntity.cs",
-              "RelativeDocumentMoniker": "Store.DataAccess.Postgress\\Models\\ImagesEntity.cs",
-              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Models\\ImagesEntity.cs",
-              "RelativeToolTip": "Store.DataAccess.Postgress\\Models\\ImagesEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T17:19:55.203Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ClientService.cs",
-              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Services\\ClientService.cs",
-              "RelativeDocumentMoniker": "Store.API\\Services\\ClientService.cs",
-              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Services\\ClientService.cs",
-              "RelativeToolTip": "Store.API\\Services\\ClientService.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAtwFsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T12:58:10.271Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ProductRepositoryImpl.cs",
-              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Repositories\\impl\\ProductRepositoryImpl.cs",
-              "RelativeDocumentMoniker": "Store.DataAccess.Postgress\\Repositories\\impl\\ProductRepositoryImpl.cs",
-              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Repositories\\impl\\ProductRepositoryImpl.cs",
-              "RelativeToolTip": "Store.DataAccess.Postgress\\Repositories\\impl\\ProductRepositoryImpl.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAIwDcAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T17:19:24.17Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ProductDTO.cs",
-              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Dto\\ProductDTO.cs",
-              "RelativeDocumentMoniker": "Store.API\\Dto\\ProductDTO.cs",
-              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Dto\\ProductDTO.cs",
-              "RelativeToolTip": "Store.API\\Dto\\ProductDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T17:23:14.458Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Services\\ProductService.cs",
-              "RelativeDocumentMoniker": "Store.API\\Services\\ProductService.cs",
-              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Services\\ProductService.cs",
-              "RelativeToolTip": "Store.API\\Services\\ProductService.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAAADoAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T12:48:52.486Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ProductConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Configurations\\ProductConfiguration.cs",
-              "RelativeDocumentMoniker": "Store.DataAccess.Postgress\\Configurations\\ProductConfiguration.cs",
-              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.DataAccess.Postgress\\Configurations\\ProductConfiguration.cs",
-              "RelativeToolTip": "Store.DataAccess.Postgress\\Configurations\\ProductConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-03T17:22:13.08Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 0,
               "Title": "SupplierService.cs",
               "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Services\\SupplierService.cs",
               "RelativeDocumentMoniker": "Store.API\\Services\\SupplierService.cs",
               "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Services\\SupplierService.cs",
               "RelativeToolTip": "Store.API\\Services\\SupplierService.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAwwDwAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAIwEQAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T12:48:23.43Z"
+              "WhenOpened": "2025-04-05T12:44:48.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SupplierAPIController.cs",
+              "DocumentMoniker": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Controllers\\SupplierAPIController.cs",
+              "RelativeDocumentMoniker": "Store.API\\Controllers\\SupplierAPIController.cs",
+              "ToolTip": "C:\\Users\\topha\\Documents\\GitHub\\StoreWebApi\\StoreWebApi\\Store.API\\Controllers\\SupplierAPIController.cs",
+              "RelativeToolTip": "Store.API\\Controllers\\SupplierAPIController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-05T12:44:43.101Z",
+              "EditorCaption": ""
             }
           ]
         }

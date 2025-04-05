@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Store.API.Dto;
 using Store.API.Services;
-using Store.DataAccess.Postgress.Models;
 
 namespace Store.API.Controllers
 {
@@ -19,16 +18,16 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<ClientDTO> GetById(Guid id)
+        public ActionResult<ClientReadDTO> GetById(Guid id)
         {
             return _service.FindById(id);
         }
 
         [HttpPost("newClient=")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult Create([FromBody] ClientDTO clientDto)
+        public ActionResult<ClientReadDTO> Create([FromBody] ClientCreateDTO clientDto)
         {
             return _service.Create(clientDto);
         }
@@ -39,7 +38,6 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult Delete(Guid guid)
         {
-
             return _service.Delete(guid);
         }
 
@@ -47,7 +45,7 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<IEnumerable<ClientDTO>> GetByNameAndSurname(string name, string surname)
+        public ActionResult<IEnumerable<ClientReadDTO>> GetByNameAndSurname(string name, string surname)
         {
             return _service.FindByNameAndSurname(name, surname);
         }
@@ -55,7 +53,7 @@ namespace Store.API.Controllers
         [HttpGet("getAll")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<IEnumerable<ClientDTO>> GetAll()
+        public ActionResult<IEnumerable<ClientReadDTO>> GetAll()
         {
             return _service.FindAll();
         }
@@ -64,7 +62,7 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<IEnumerable<ClientDTO>> GetAll(int limit, int page)
+        public ActionResult<IEnumerable<ClientReadDTO>> GetAll(int limit, int page)
         {
             return _service.FindAll(limit, page);
         }
@@ -73,11 +71,10 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult UpdateAddress(Guid id, [FromBody]AddressDTO addressdto)
+        public ActionResult<ClientReadDTO> UpdateAddress(Guid id, [FromBody]AddressCreateDTO addressdto)
         {       
             return _service.UpdateAddress(id, addressdto);
         }
-
 
     }
 }

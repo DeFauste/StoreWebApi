@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Store.DataAccess.Postgress.Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Store.DataAccess.Postgress.Repositories.impl
 {
@@ -18,14 +19,14 @@ namespace Store.DataAccess.Postgress.Repositories.impl
                     .ExecuteDelete();
         }
 
-        public  List<ClientEntity> FindAll()
+        public  IEnumerable<ClientEntity> FindAll()
         {
             return  _dbContext.Client
                         .AsNoTracking()
                         .ToList();
         }
 
-        public List<ClientEntity> FindAll(int limit, int page)
+        public IEnumerable<ClientEntity> FindAll(int limit, int page)
         {
             return _dbContext.Client
                         .AsNoTracking()
@@ -34,14 +35,14 @@ namespace Store.DataAccess.Postgress.Repositories.impl
                         .ToList();
         }
 
-        public ClientEntity? FindById(Guid id)
+        public ClientEntity FindById(Guid id)
         {
             return _dbContext.Client
                 .AsNoTracking()
                 .FirstOrDefault(c => c.Id == id);
         }
 
-        public List<ClientEntity> FindClient(string name, string surname)
+        public IEnumerable<ClientEntity> FindClient(string name, string surname)
         {
             return _dbContext.Client
                 .AsNoTracking()
@@ -49,16 +50,25 @@ namespace Store.DataAccess.Postgress.Repositories.impl
                 .ToList();
         }
 
-        public ClientEntity Add(ClientEntity entity)
+        public void Create(ClientEntity entity)
         {
-            var created = _dbContext.Client.Add(entity);
-            _dbContext.SaveChanges();
- 
-            return created.Entity;
+            if (entity == null)
+            {
+                throw new ArgumentNullException(nameof(entity));
+            }
+            _dbContext.Client.Add(entity);
         }
 
         public void Update(ClientEntity entity, AddressEntity data)
         {
+            if (entity == null)
+            {
+                throw new ArgumentNullException(nameof(entity));
+            }
+            else if (data == null)
+            {
+                throw new ArgumentNullException(nameof(data));
+            }
             _dbContext.Client
                 .Where(c => c.Id == entity.Id)
                 .ExecuteUpdateAsync(s => s
@@ -69,6 +79,11 @@ namespace Store.DataAccess.Postgress.Repositories.impl
         public bool CanConnection()
         {
             return _dbContext.Database.CanConnect();
+        }
+
+        public bool SaveChange()
+        {
+            return (_dbContext.SaveChanges() >= 0);
         }
     }
 }

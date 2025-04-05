@@ -10,11 +10,13 @@ namespace Store.DataAccess.Postgress.Repositories.impl
         {
             _dbContext = dbContext;
         }
-        public SupplierEntiry Add(SupplierEntiry entity)
+        public void Create(SupplierEntiry entity)
         {
-            var creted = _dbContext.Supplier.Add(entity);
-           _dbContext.SaveChanges();
-            return creted.Entity;
+            if (entity == null)
+            {
+                throw new ArgumentNullException(nameof(entity));
+            }
+            _dbContext.Supplier.Add(entity);
         }
 
         public void DeleteById(Guid id)
@@ -24,14 +26,14 @@ namespace Store.DataAccess.Postgress.Repositories.impl
                 .ExecuteDelete();
         }
 
-        public List<SupplierEntiry> FindAll()
+        public IEnumerable<SupplierEntiry> FindAll()
         {
             return _dbContext.Supplier
                 .AsNoTracking()
                 .ToList();
         }
 
-        public SupplierEntiry? FindById(Guid id)
+        public SupplierEntiry FindById(Guid id)
         {
             return _dbContext.Supplier
                 .AsNoTracking()
@@ -40,7 +42,15 @@ namespace Store.DataAccess.Postgress.Repositories.impl
 
         public void Update(SupplierEntiry entity, AddressEntity data)
         {
-           _dbContext.Supplier
+            if (entity == null)
+            {
+                throw new ArgumentNullException(nameof(entity));
+            }
+            else if (data == null)
+            {
+                throw new ArgumentNullException(nameof(data));
+            }
+            _dbContext.Supplier
                 .Where(s => s.Id == entity.Id)
                 .ExecuteUpdate(a => a
                 .SetProperty(s =>  s.AddressId, data.Id));
@@ -48,6 +58,11 @@ namespace Store.DataAccess.Postgress.Repositories.impl
         public bool CanConnection()
         {
             return _dbContext.Database.CanConnect();
+        }
+
+        public bool SaveChange()
+        {
+            return (_dbContext.SaveChanges() >= 0);
         }
     }
 }

@@ -8,33 +8,33 @@ namespace Store.API.Services
 {
     public class ImageService
     {
-        IImageRepository _repository;
+        IImageRepository _repositoryImage;
         IMapper _mapper;
         IProductRepository _productRepository;
-        public ImageService(IImageRepository repository, IProductRepository productRepository ,IMapper mapper)
+        public ImageService(IImageRepository repositoryImage, IProductRepository productRepository ,IMapper mapper)
         {
-            _repository = repository;
+            _repositoryImage = repositoryImage;
             _mapper = mapper;
             _productRepository = productRepository;
         }
         public bool CanConnection()
         {
-            return _repository.CanConnection();
+            return _repositoryImage.CanConnection();
         }
 
-        public ActionResult Create(byte[] image, Guid idProduct)
+        public ActionResult<ImageReadDTO> Create(byte[] image, Guid idProduct)
         {
-            if (_repository.CanConnection() == false)
+            if (_repositoryImage.CanConnection() == false)
                 return new ObjectResult("No connection to the database")
                 { StatusCode = StatusCodes.Status500InternalServerError };
 
             if (idProduct == Guid.Empty || image == null)
-                return new BadRequestObjectResult("Invalid data")
+                return new BadRequestObjectResult("Invalid data Guid or image is null")
                 { StatusCode = StatusCodes.Status400BadRequest };
 
             var productEntity = _productRepository.FindById(idProduct);
             if (productEntity == null)
-                return new BadRequestObjectResult("Product not exist")
+                return new BadRequestObjectResult($"Product Guid {idProduct} not exist")
                 { StatusCode = StatusCodes.Status404NotFound};
 
             if(productEntity.ImageId != Guid.Empty)
@@ -42,32 +42,36 @@ namespace Store.API.Services
                 { StatusCode = StatusCodes.Status400BadRequest };
 
             var entity = new ImagesEntity { Id = Guid.Empty, Image = image };
-            var created = _repository.Add(entity);
-            var dto = _mapper.Map<ImagesEntity, ImageDTO>(created);
+            _repositoryImage.Create(entity);
+            _repositoryImage.SaveChange();
+
+            var dto = _mapper.Map<ImageReadDTO>(entity);
 
             productEntity.ImageId = dto.Id;
             _productRepository.Update(productEntity, 0);
+            _productRepository.SaveChange();
 
-            return new OkObjectResult(dto);
+            return new OkObjectResult(dto) {StatusCode = StatusCodes.Status201Created };
         }
-        public ActionResult<ImageDTO> FindById(Guid id)
+        public ActionResult<ImageReadDTO> FindById(Guid id)
         {
-            if (_repository.CanConnection() == false)
+            if (_repositoryImage.CanConnection() == false)
                 return new ObjectResult("No connection to the database")
                 { StatusCode = StatusCodes.Status500InternalServerError };
 
-            var entity = _repository.FindById(id);
+            var entity = _repositoryImage.FindById(id);
             if (entity == null)
                 return new ObjectResult($"The object with the Guid {id} was not found")
                 { StatusCode = StatusCodes.Status404NotFound };
 
-            var dto = _mapper.Map<ImagesEntity, ImageDTO>(entity);
+            var dto = _mapper.Map<ImageReadDTO>(entity);
+
             return new OkObjectResult(dto)
             { StatusCode = StatusCodes.Status200OK }; ;
         }
         public ActionResult Delete(Guid id)
         {
-            if (_repository.CanConnection() == false)
+            if (_repositoryImage.CanConnection() == false)
                 return new ObjectResult("No connection to the database")
                 { StatusCode = StatusCodes.Status500InternalServerError };
 
@@ -75,30 +79,30 @@ namespace Store.API.Services
                 return new ObjectResult($"The object with the Guid {id} was not exist")
                 { StatusCode = StatusCodes.Status404NotFound };
 
-            _repository.DeleteById(id);
+            _repositoryImage.DeleteById(id);
             return new OkObjectResult($"Image with Guid {id} deleted")
             { StatusCode = StatusCodes.Status200OK };
         }
 
-        public ActionResult Update(Guid id, byte[] image)
+        public ActionResult<ImageReadDTO> Update(Guid id, byte[] image)
         {
-            if (_repository.CanConnection() == false)
+            if (_repositoryImage.CanConnection() == false)
                 return new ObjectResult("No connection to the database")
                 { StatusCode = StatusCodes.Status500InternalServerError };
 
-            var entity = _repository.FindById(id);
+            var entity = _repositoryImage.FindById(id);
             if (entity == null)
                 return new ObjectResult($"The object with the Guid {id} was not found")
                 { StatusCode = StatusCodes.Status404NotFound };
 
-            _repository.Update(entity, image);
-            var dto = _mapper.Map<ImagesEntity, ImageDTO>(entity);
+            _repositoryImage.Update(entity, image);
+            var dto = _mapper.Map<ImageReadDTO>(entity);
             return new OkObjectResult(dto)
             { StatusCode = StatusCodes.Status200OK };
         }
-        public ActionResult<ImageDTO> GetByIdProduct(Guid id)
+        public ActionResult<ImageReadDTO> GetByIdProduct(Guid id)
         {
-            if (_repository.CanConnection() == false)
+            if (_repositoryImage.CanConnection() == false)
                 return new ObjectResult("No connection to the database")
                 { StatusCode = StatusCodes.Status500InternalServerError };
 
@@ -107,10 +111,10 @@ namespace Store.API.Services
                 return new ObjectResult($"The object with the Guid {id} was not found")
                 { StatusCode = StatusCodes.Status404NotFound };
 
-            var entity = _repository.FindById(product.ImageId);
+            var entity = _repositoryImage.FindById(product.ImageId);
             if(entity == null) entity = new ImagesEntity();
 
-            var dto = _mapper.Map<ImagesEntity, ImageDTO>(entity);
+            var dto = _mapper.Map<ImageReadDTO>(entity);
             return new OkObjectResult(dto)
             { StatusCode = StatusCodes.Status200OK }; ;
         }

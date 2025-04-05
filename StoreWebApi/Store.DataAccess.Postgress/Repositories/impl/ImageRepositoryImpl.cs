@@ -10,16 +10,13 @@ namespace Store.DataAccess.Postgress.Repositories.impl
         {
             _dbContext = dbContext;
         }
-        public ImagesEntity Add(ImagesEntity entity)
+        public void Create(ImagesEntity entity)
         {
-             var creted = _dbContext.Images.Add(entity);
-             _dbContext.SaveChanges();
-            return creted.Entity;
-        }
-
-        public bool CanConnection()
-        {
-            return _dbContext.Database.CanConnect();
+            if (entity == null)
+            {
+                throw new ArgumentNullException(nameof(entity));
+            }
+            _dbContext.Images.Add(entity);
         }
 
         public void DeleteById(Guid id)
@@ -29,14 +26,14 @@ namespace Store.DataAccess.Postgress.Repositories.impl
                 .ExecuteDelete();
         }
 
-        public List<ImagesEntity> FindAll()
+        public IEnumerable<ImagesEntity> FindAll()
         {
             return _dbContext.Images
                 .AsNoTracking()
                 .ToList(); 
         }
 
-        public ImagesEntity? FindById(Guid id)
+        public ImagesEntity FindById(Guid id)
         {
             return _dbContext.Images
                 .AsNoTracking()
@@ -46,10 +43,27 @@ namespace Store.DataAccess.Postgress.Repositories.impl
 
         public void Update(ImagesEntity entity, byte[] data)
         {
+            if (entity == null)
+            {
+                throw new ArgumentNullException(nameof(entity));
+            }
+            else if (data == null)
+            {
+                throw new ArgumentNullException(nameof(data));
+            }
             _dbContext.Images
                 .Where(i => i.Id == entity.Id)
                 .ExecuteUpdate(d => d
                 .SetProperty(i => i.Image, data));
+        }
+        public bool SaveChange()
+        {
+            return (_dbContext.SaveChanges() >= 0);
+        }
+
+        public bool CanConnection()
+        {
+            return _dbContext.Database.CanConnect();
         }
     }
 }

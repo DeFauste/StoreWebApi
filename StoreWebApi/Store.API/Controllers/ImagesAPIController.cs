@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Store.API.Dto;
 using Store.API.Services;
-using System.Text;
+
 namespace Store.API.Controllers
 {
     [ApiController]
@@ -15,19 +15,20 @@ namespace Store.API.Controllers
         }
 
         [HttpPost("idProduct={idProduct}&image=")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult Create(Guid idProduct,[FromHeader] byte[] image)
+        public ActionResult<ImageReadDTO> Create(Guid idProduct,[FromHeader] byte[] image)
         {
             return _service.Create(image, idProduct); 
         }
+
         [HttpGet("id=")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<ImageDTO> GetById(Guid id)
+        public ActionResult<ImageReadDTO> GetById(Guid id)
         {
             return _service.FindById(id);
         }
@@ -38,14 +39,14 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult Delete(Guid guid)
         {
-
             return _service.Delete(guid);
         }
+
         [HttpPatch("id={id}&image=")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult UpdateAddress(Guid id, [FromHeader] byte[] image)
+        public ActionResult<ImageReadDTO> UpdateAddress(Guid id, [FromHeader] byte[] image)
         {
             return _service.Update(id, image);
         }
@@ -54,7 +55,7 @@ namespace Store.API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public ActionResult<ImageDTO> GetByIdProduct(Guid id)
+        public ActionResult<ImageReadDTO> GetByIdProduct(Guid id)
         {
             return _service.GetByIdProduct(id);
         }

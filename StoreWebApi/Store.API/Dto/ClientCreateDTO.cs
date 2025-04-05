@@ -3,10 +3,8 @@ using System.Text.Json.Serialization;
 
 namespace Store.API.Dto
 {
-    public class ClientDTO
+    public class ClientCreateDTO
     {
-        [JsonPropertyName("id")]
-        public Guid Id { get; set; }
         [Required, MaxLength(30)]
         [JsonPropertyName("client_name")]
         public string ClientName { get; set; } = string.Empty;
